@@ -17,6 +17,7 @@
 		1FE3C6782357E34D00C99BEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3C6772357E34D00C99BEC /* Assets.xcassets */; };
 		1FE3C67B2357E34D00C99BEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3C6792357E34D00C99BEC /* LaunchScreen.storyboard */; };
 		1FE3C6A02357E44400C99BEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE3C69F2357E44400C99BEC /* MapKit.framework */; };
+		3A7178EB236FFAC0008D817C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7178EA236FFAC0008D817C /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1FE3C67A2357E34D00C99BEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FE3C67C2357E34D00C99BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE3C69F2357E44400C99BEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3A7178EA236FFAC0008D817C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				1FE3C6772357E34D00C99BEC /* Assets.xcassets */,
 				1FE3C6792357E34D00C99BEC /* LaunchScreen.storyboard */,
 				1FE3C67C2357E34D00C99BEC /* Info.plist */,
+				3A7178EA236FFAC0008D817C /* Location.swift */,
 				1FE2BE1E236E489600A7AF67 /* WaypointCreationViewController.swift */,
 				1FE2BE20236E49B100A7AF67 /* PublicHuntSearchViewController.swift */,
 				1FE2BE22236E4A7900A7AF67 /* PrivateHuntViewController.swift */,
@@ -166,6 +169,7 @@
 			files = (
 				1FE3C6732357E34C00C99BEC /* HuntCreationViewController.swift in Sources */,
 				1FE3C66F2357E34C00C99BEC /* AppDelegate.swift in Sources */,
+				3A7178EB236FFAC0008D817C /* Location.swift in Sources */,
 				1FE2BE1F236E489600A7AF67 /* WaypointCreationViewController.swift in Sources */,
 				1FE3C6712357E34C00C99BEC /* MapViewController.swift in Sources */,
 				1FE2BE21236E49B100A7AF67 /* PublicHuntSearchViewController.swift in Sources */,
