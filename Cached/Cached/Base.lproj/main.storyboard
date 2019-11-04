@@ -63,6 +63,9 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="location.fill" catalog="system" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="mapView" destination="hiF-vo-Zzv" id="4cm-VH-wxt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

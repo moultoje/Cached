@@ -9,11 +9,7 @@
 import UIKit
 import MapKit
 
-<<<<<<< HEAD
-class MapViewController: UIViewController {
-=======
-class FirstViewController: UIViewController, MKMapViewDelegate {
->>>>>>> 069071f4aeb007773b15e8acc8ab6a9e8dc72907
+class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
