@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Cached
 //
-//  Created by jeff on 10/16/19.
+//  Created by Jeffrey Moulton on 10/16/19.
 //  Copyright © 2019 Mobile Treasure Hunt. All rights reserved.
 //
 
