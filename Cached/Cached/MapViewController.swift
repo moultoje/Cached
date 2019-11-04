@@ -2,7 +2,7 @@
 //  MapViewController.swift
 //  Cached
 //
-//  Created by jeff on 10/16/19.
+//  Created by Jeffrey Moulton on 10/16/19.
 //  Copyright © 2019 Mobile Treasure Hunt. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import MapKit
 import Foundation
 import CoreLocation
 
-class FirstViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
