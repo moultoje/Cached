@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import Foundation
+import CoreLocation
 
 class FirstViewController: UIViewController, MKMapViewDelegate {
 
@@ -19,8 +21,9 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        mapView.userTrackingMode = .follow
+        
         checkLocationServices()
-        //mapView.delegate = self
     }
     
     func checkLocationServices() {
@@ -33,12 +36,15 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
     
     func checkLocationAuthorization() {
         switch CLLocationManager.authorizationStatus() {
-        case .authorizedWhenInUse: break //mapView.showsUserLocation = true
-            case .denied: print("Please enable location services in iPhone Settings.")
+            case .authorizedWhenInUse: break
+            case .denied: locationManager.requestWhenInUseAuthorization()
             case .notDetermined: break
             case .restricted: break
             case .authorizedAlways: break
         }
     }
+    
 }
+
+
 
