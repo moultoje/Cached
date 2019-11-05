@@ -23,11 +23,14 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
         dismiss(animated: true, completion: nil)
     }
     
-    var audienceItem = ["Private", "Public"]
+    var audienceItem = ["Private","Public"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        AudienceTable.delegate = self
+        AudienceTable.dataSource = self
     }
     
     func numberOfSections(in AudienceTable: UITableView) -> Int {
