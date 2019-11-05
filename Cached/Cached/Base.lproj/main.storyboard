@@ -110,7 +110,7 @@
                             <tableViewSection headerTitle="Treasure Hunt Name" id="15y-vM-HyY">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tAg-p0-Qhz">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tAg-p0-Qhz" id="ESN-MV-PJ3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -135,7 +135,7 @@
                             <tableViewSection headerTitle="Waypoints" id="2na-YH-KS3">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UIk-85-Jq1">
-                                        <rect key="frame" x="0.0" y="155" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="154.83333206176758" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UIk-85-Jq1" id="J4p-dk-21Q">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -147,7 +147,7 @@
                             <tableViewSection headerTitle="Creator's email Address" id="3hn-I1-0IG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HrC-Fi-Sbu">
-                                        <rect key="frame" x="0.0" y="254.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="254.33333206176758" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HrC-Fi-Sbu" id="Qtr-FU-cMR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -172,7 +172,7 @@
                             <tableViewSection headerTitle="Treasure Hunt Audience" id="eu9-q6-jMe">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" textLabel="VuA-Ua-kKk" style="IBUITableViewCellStyleDefault" id="Ll7-S4-QpN">
-                                        <rect key="frame" x="0.0" y="354" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="353.83333206176758" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ll7-S4-QpN" id="BIu-kI-Vrj">
                                             <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
@@ -189,7 +189,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="AVn-ix-3uf" style="IBUITableViewCellStyleDefault" id="Dex-4n-gNo">
-                                        <rect key="frame" x="0.0" y="397.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="397.33333206176758" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dex-4n-gNo" id="DLn-D9-pNT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -210,7 +210,7 @@
                             <tableViewSection headerTitle="Enter Participants' email Addresses Separated by Commas" id="z7S-JW-cCH">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ifw-EI-ZMc">
-                                        <rect key="frame" x="0.0" y="515" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="514.83333206176758" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ifw-EI-ZMc" id="3Rj-T9-xR8">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -256,7 +256,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbg-s4-6nF">
-                                <rect key="frame" x="0.0" y="353.5" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="353.66666666666669" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="YR1-eo-YZu"/>
                                 </constraints>
@@ -269,7 +269,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzD-q2-xdR">
-                                <rect key="frame" x="0.0" y="403.5" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="403.66666666666669" width="414" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Join Private Treasure Hunt">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -279,7 +279,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTW-U7-Z0W">
-                                <rect key="frame" x="0.0" y="453.5" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="453.66666666666669" width="414" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create Treasure Hunt">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -356,14 +356,14 @@
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="yet-QE-VSQ" style="IBUITableViewCellStyleDefault" id="MVB-2b-bot">
-                                                        <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="28" width="394" height="43.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MVB-2b-bot" id="afg-zg-r7O">
-                                                            <rect key="frame" x="0.0" y="0.0" width="363" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="363" height="43.666667938232422"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yet-QE-VSQ">
-                                                                    <rect key="frame" x="20" y="0.0" width="335" height="43.5"/>
+                                                                    <rect key="frame" x="20" y="0.0" width="335" height="43.666667938232422"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -410,14 +410,14 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="audienceCell" textLabel="swA-PV-oXd" style="IBUITableViewCellStyleDefault" id="Kb0-yS-uqX">
-                                                        <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
+                                                        <rect key="frame" x="0.0" y="28" width="394" height="43.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kb0-yS-uqX" id="bxK-1D-Ntw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.666667938232422"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="swA-PV-oXd">
-                                                                    <rect key="frame" x="20" y="0.0" width="354" height="43.5"/>
+                                                                    <rect key="frame" x="20" y="0.0" width="354" height="43.666667938232422"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -529,7 +529,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter hunt ID..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhG-ud-EZa">
-                                        <rect key="frame" x="139.5" y="44" width="135.5" height="34"/>
+                                        <rect key="frame" x="139.33333333333331" y="44" width="135.33333333333331" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
