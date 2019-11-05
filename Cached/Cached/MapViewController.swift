@@ -14,7 +14,7 @@ import CoreLocation
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    
+
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -45,6 +45,5 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
 }
-
 
 
