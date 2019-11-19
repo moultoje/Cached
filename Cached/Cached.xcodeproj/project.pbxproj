@@ -18,6 +18,8 @@
 		1FE3C67B2357E34D00C99BEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3C6792357E34D00C99BEC /* LaunchScreen.storyboard */; };
 		1FE3C6A02357E44400C99BEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE3C69F2357E44400C99BEC /* MapKit.framework */; };
 		3A7178EB236FFAC0008D817C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7178EA236FFAC0008D817C /* Location.swift */; };
+		6A4C05122377B07300EA42E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C05112377B07300EA42E0 /* GoogleService-Info.plist */; };
+		6A4C05192378CF2900EA42E0 /* Hunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C05182378CF2900EA42E0 /* Hunt.swift */; };
 		6AD5783E236E464200B1BD7D /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5783D236E464100B1BD7D /* nanopb.framework */; };
 		6AD57842236E465300B1BD7D /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD57841236E465200B1BD7D /* FirebaseCoreDiagnostics.framework */; };
 		6AD57846236E466700B1BD7D /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD57845236E466600B1BD7D /* FirebaseInstanceID.framework */; };
@@ -35,7 +37,7 @@
 		6AD57876236E47FB00B1BD7D /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD57875236E47FA00B1BD7D /* FirebaseFirestore.framework */; };
 		6AD5787A236E480900B1BD7D /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD57879236E480700B1BD7D /* BoringSSL-GRPC.framework */; };
 		6AD5787F236E4B1100B1BD7D /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6AD5787E236E4B0F00B1BD7D /* gRPCCertificates-Cpp.bundle */; };
-		6AD57884236E538F00B1BD7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AD57883236E538E00B1BD7D /* GoogleService-Info.plist */; };
+		6AE0742C2381C94F000DE309 /* Waypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0742B2381C94F000DE309 /* Waypoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		1FE3C67C2357E34D00C99BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE3C69F2357E44400C99BEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3A7178EA236FFAC0008D817C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		6A4C05112377B07300EA42E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6A4C05182378CF2900EA42E0 /* Hunt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hunt.swift; sourceTree = "<group>"; };
 		6AD5783D236E464100B1BD7D /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
 		6AD57841236E465200B1BD7D /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
 		6AD57845236E466600B1BD7D /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
@@ -70,7 +74,7 @@
 		6AD57879236E480700B1BD7D /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
 		6AD5787E236E4B0F00B1BD7D /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 		6AD57882236E503C00B1BD7D /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		6AD57883236E538E00B1BD7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6AE0742B2381C94F000DE309 /* Waypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waypoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,11 +133,13 @@
 				1FE3C6772357E34D00C99BEC /* Assets.xcassets */,
 				1FE3C6792357E34D00C99BEC /* LaunchScreen.storyboard */,
 				1FE3C67C2357E34D00C99BEC /* Info.plist */,
-				6AD57883236E538E00B1BD7D /* GoogleService-Info.plist */,
 				3A7178EA236FFAC0008D817C /* Location.swift */,
 				1FE2BE1E236E489600A7AF67 /* WaypointCreationViewController.swift */,
 				1FE2BE20236E49B100A7AF67 /* PublicHuntSearchViewController.swift */,
+				6A4C05182378CF2900EA42E0 /* Hunt.swift */,
+				6AE0742B2381C94F000DE309 /* Waypoint.swift */,
 				1FE2BE22236E4A7900A7AF67 /* PrivateHuntViewController.swift */,
+				6A4C05112377B07300EA42E0 /* GoogleService-Info.plist */,
 			);
 			path = Cached;
 			sourceTree = "<group>";
@@ -228,7 +234,7 @@
 			files = (
 				1FE3C67B2357E34D00C99BEC /* LaunchScreen.storyboard in Resources */,
 				6AD5787F236E4B1100B1BD7D /* gRPCCertificates-Cpp.bundle in Resources */,
-				6AD57884236E538F00B1BD7D /* GoogleService-Info.plist in Resources */,
+				6A4C05122377B07300EA42E0 /* GoogleService-Info.plist in Resources */,
 				1FE3C6782357E34D00C99BEC /* Assets.xcassets in Resources */,
 				1FE3C6762357E34C00C99BEC /* main.storyboard in Resources */,
 			);
@@ -245,6 +251,8 @@
 				1FE3C66F2357E34C00C99BEC /* AppDelegate.swift in Sources */,
 				3A7178EB236FFAC0008D817C /* Location.swift in Sources */,
 				1FE2BE1F236E489600A7AF67 /* WaypointCreationViewController.swift in Sources */,
+				6A4C05192378CF2900EA42E0 /* Hunt.swift in Sources */,
+				6AE0742C2381C94F000DE309 /* Waypoint.swift in Sources */,
 				1FE3C6712357E34C00C99BEC /* MapViewController.swift in Sources */,
 				1FE2BE21236E49B100A7AF67 /* PublicHuntSearchViewController.swift in Sources */,
 				1FE2BE23236E4A7900A7AF67 /* PrivateHuntViewController.swift in Sources */,
@@ -395,7 +403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQY5XSGK29;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -425,7 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BQY5XSGK29;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
