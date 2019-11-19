@@ -411,6 +411,7 @@
 				HEADER_SEARCH_PATHS = (
 					/Users/katierievley/Desktop/Cached/Cached,
 					/Users/jeff/Documents/Cached/Cached,
+					/Users/drew/Documents/Cached/Cached,
 				);
 				INFOPLIST_FILE = Cached/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -440,6 +441,7 @@
 				HEADER_SEARCH_PATHS = (
 					/Users/katierievley/Desktop/Cached/Cached,
 					/Users/jeff/Documents/Cached/Cached,
+					/Users/drew/Documents/Cached/Cached,
 				);
 				INFOPLIST_FILE = Cached/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
