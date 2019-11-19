@@ -3,7 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,13 +29,14 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-VY-tGy">
                                 <rect key="frame" x="334" y="56" width="60" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Mos-ue-WPM"/>
                                     <constraint firstAttribute="height" constant="30" id="xhO-uH-L07"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Found">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -47,17 +48,68 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm5-gx-R7P">
+                                <rect key="frame" x="20" y="730" width="68" height="24"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="6Pa-br-xzW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                <state key="normal" title="Center" image="location.circle.fill" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="center:" destination="9pv-A4-QxB" eventType="touchUpInside" id="hNa-9k-2cr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eze-cK-cJJ">
+                                <rect key="frame" x="20" y="760" width="68" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="RQL-Ro-NUx"/>
+                                    <constraint firstAttribute="height" constant="30" id="m0j-vB-Xc3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="View" image="map.fill" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changeMapType:" destination="9pv-A4-QxB" eventType="touchUpInside" id="IKN-47-TaY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="hiF-vo-Zzv" firstAttribute="leading" secondItem="Eze-cK-cJJ" secondAttribute="trailing" constant="-70" id="1on-vE-O45"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="hiF-vo-Zzv" secondAttribute="bottom" id="CJW-Qu-FUW"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Sim-VY-tGy" secondAttribute="trailing" constant="20" id="Gy3-HF-Kk4"/>
                             <constraint firstItem="5Ig-OW-lzL" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="10" id="UBK-n9-qqr"/>
                             <constraint firstItem="Sim-VY-tGy" firstAttribute="centerY" secondItem="5Ig-OW-lzL" secondAttribute="centerY" id="XPw-mG-8JF"/>
+                            <constraint firstItem="Eze-cK-cJJ" firstAttribute="top" secondItem="fm5-gx-R7P" secondAttribute="bottom" constant="21" id="Z2H-Pg-bDW"/>
                             <constraint firstItem="hiF-vo-Zzv" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="bGZ-wm-UVd"/>
                             <constraint firstItem="hiF-vo-Zzv" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="cFK-76-pA0"/>
+                            <constraint firstItem="hiF-vo-Zzv" firstAttribute="leading" secondItem="fm5-gx-R7P" secondAttribute="trailing" constant="-70" id="fL0-5z-LUM"/>
                             <constraint firstItem="5Ig-OW-lzL" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="fdg-cy-L3K"/>
                             <constraint firstItem="Sim-VY-tGy" firstAttribute="leading" secondItem="5Ig-OW-lzL" secondAttribute="trailing" constant="10" id="mH0-X5-G94"/>
+                            <constraint firstItem="Eze-cK-cJJ" firstAttribute="top" secondItem="hiF-vo-Zzv" secondAttribute="bottom" constant="-92" id="wGh-VA-vMm"/>
                             <constraint firstItem="hiF-vo-Zzv" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="xAT-Iv-GGr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -262,7 +314,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Search Public Treasure Hunt">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="0Jz-4r-udw" kind="show" id="SgI-kO-O8K"/>
@@ -272,7 +324,7 @@
                                 <rect key="frame" x="0.0" y="403.66666666666669" width="414" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Join Private Treasure Hunt">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="kEr-3F-8vb" kind="show" id="wjg-R7-tgT"/>
@@ -282,7 +334,7 @@
                                 <rect key="frame" x="0.0" y="453.66666666666669" width="414" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create Treasure Hunt">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="4jb-xT-M2t" kind="show" id="X76-v9-Q5y"/>
@@ -529,7 +581,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter hunt ID..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhG-ud-EZa">
-                                        <rect key="frame" x="139.33333333333331" y="44" width="135.33333333333331" height="34"/>
+                                        <rect key="frame" x="139.66666666666666" y="44" width="134.99999999999997" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -796,6 +848,8 @@
     </scenes>
     <resources>
         <image name="folder.fill" catalog="system" width="64" height="46"/>
+        <image name="location.circle.fill" catalog="system" width="64" height="60"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
+        <image name="map.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>

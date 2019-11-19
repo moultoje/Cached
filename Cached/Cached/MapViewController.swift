@@ -44,6 +44,24 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    @IBAction func center(_ sender: Any) {
+        if let userLocation = mapView.userLocation.location?.coordinate {
+            
+            let region = MKCoordinateRegion(
+                center: userLocation, latitudinalMeters: 2000, longitudinalMeters: 2000)
+            
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    @IBAction func changeMapType(_ sender: Any) {
+        if mapView.mapType == MKMapType.standard {
+            mapView.mapType = MKMapType.satellite
+        } else {
+            mapView.mapType = MKMapType.standard
+        }
+    }
+    
 }
 
 
