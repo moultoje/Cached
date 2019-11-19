@@ -37,6 +37,7 @@
 		6AD57876236E47FB00B1BD7D /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD57875236E47FA00B1BD7D /* FirebaseFirestore.framework */; };
 		6AD5787A236E480900B1BD7D /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD57879236E480700B1BD7D /* BoringSSL-GRPC.framework */; };
 		6AD5787F236E4B1100B1BD7D /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6AD5787E236E4B0F00B1BD7D /* gRPCCertificates-Cpp.bundle */; };
+		6AE0742C2381C94F000DE309 /* Waypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0742B2381C94F000DE309 /* Waypoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		6AD57879236E480700B1BD7D /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
 		6AD5787E236E4B0F00B1BD7D /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 		6AD57882236E503C00B1BD7D /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		6AE0742B2381C94F000DE309 /* Waypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waypoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				1FE2BE1E236E489600A7AF67 /* WaypointCreationViewController.swift */,
 				1FE2BE20236E49B100A7AF67 /* PublicHuntSearchViewController.swift */,
 				6A4C05182378CF2900EA42E0 /* Hunt.swift */,
+				6AE0742B2381C94F000DE309 /* Waypoint.swift */,
 				1FE2BE22236E4A7900A7AF67 /* PrivateHuntViewController.swift */,
 				6A4C05112377B07300EA42E0 /* GoogleService-Info.plist */,
 			);
@@ -249,6 +252,7 @@
 				3A7178EB236FFAC0008D817C /* Location.swift in Sources */,
 				1FE2BE1F236E489600A7AF67 /* WaypointCreationViewController.swift in Sources */,
 				6A4C05192378CF2900EA42E0 /* Hunt.swift in Sources */,
+				6AE0742C2381C94F000DE309 /* Waypoint.swift in Sources */,
 				1FE3C6712357E34C00C99BEC /* MapViewController.swift in Sources */,
 				1FE2BE21236E49B100A7AF67 /* PublicHuntSearchViewController.swift in Sources */,
 				1FE2BE23236E4A7900A7AF67 /* PrivateHuntViewController.swift in Sources */,

@@ -120,7 +120,7 @@ extension PublicHuntSearchViewController{
         
         let item = self.hunts[indexPath.row]
         
-        print("\(item.name)")
+        print("\(item.listWaypoints.count)")
         
         cell.textLabel?.text = item.name
         cell.textLabel?.textColor = UIColor.black

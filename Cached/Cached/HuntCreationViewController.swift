@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HuntCreationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -21,7 +22,27 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
     // Save button behavior
     @IBAction func save(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+        
+        let db = Firestore.firestore()
+        
+        var ref: DocumentReference? = nil
+        ref = db.collection("hunts").addDocument(data: [
+            "name": "TestHunt",
+            "isPrivate": true,
+            "creator": "Katie",
+            "description": "test adding a hunt",
+            "generalLocation": "nowhere",
+            "numberWaypoints": 0,
+            "listWaypoints": []
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
     }
+    
     
     var audienceItem = ["Private","Public"]
     
