@@ -44,20 +44,23 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        addNewWaypoint()
+        addNewWaypoint()
+        
+        self.waypointTable.rowHeight = CGFloat(120)
+        tableHeight.constant = CGFloat(120 * waypoints.count)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        waypointTable.delegate = self
-        waypointTable.dataSource = self
-        
         loadSampleWaypoint()
     }
     
     //MARK: UITableViewDataSource
     @IBOutlet weak var waypointTable: UITableView!
+    @IBOutlet weak var tableHeight: NSLayoutConstraint!
     
     var waypoints = [Waypoint]()
     
@@ -66,7 +69,18 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
         
         waypoints += [waypoint1]
         
+        self.waypointTable.reloadData()
+        
         os_log("Created waypoint", log: OSLog.default, type: .debug)
+    }
+    
+    private func addNewWaypoint(){
+        let waypoint2 = Waypoint(name: "AnotherWaypoint", clue: "Another waypoint added", latitude: 123.54, longitude: 89.33, radius: 160, id: "")
+        
+        waypoints += [waypoint2]
+        self.waypointTable.reloadData()
+        
+        os_log("Additional waypoing", log: OSLog.default, type: .debug)
     }
     
     func numberOfSections(in waypointTable: UITableView) -> Int {
