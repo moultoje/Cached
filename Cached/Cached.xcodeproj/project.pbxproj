@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FA970F82389FD98003B405D /* Public_PrivateTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA970F72389FD98003B405D /* Public_PrivateTable.swift */; };
+		1FAA2714238ADCA200A7C64F /* WaypointListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA2713238ADCA200A7C64F /* WaypointListTableViewCell.swift */; };
 		1FE2BE1F236E489600A7AF67 /* WaypointCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2BE1E236E489600A7AF67 /* WaypointCreationViewController.swift */; };
 		1FE2BE21236E49B100A7AF67 /* PublicHuntSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2BE20236E49B100A7AF67 /* PublicHuntSearchViewController.swift */; };
 		1FE2BE23236E4A7900A7AF67 /* PrivateHuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2BE22236E4A7900A7AF67 /* PrivateHuntViewController.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FA970F72389FD98003B405D /* Public_PrivateTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Public_PrivateTable.swift; sourceTree = "<group>"; };
+		1FAA2713238ADCA200A7C64F /* WaypointListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointListTableViewCell.swift; sourceTree = "<group>"; };
 		1FE2BE1E236E489600A7AF67 /* WaypointCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointCreationViewController.swift; sourceTree = "<group>"; };
 		1FE2BE20236E49B100A7AF67 /* PublicHuntSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicHuntSearchViewController.swift; sourceTree = "<group>"; };
 		1FE2BE22236E4A7900A7AF67 /* PrivateHuntViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateHuntViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FA970F92389FDF2003B405D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FE2BE1E236E489600A7AF67 /* WaypointCreationViewController.swift */,
+				1FE3C6702357E34C00C99BEC /* MapViewController.swift */,
+				1FE3C6722357E34C00C99BEC /* HuntCreationViewController.swift */,
+				1FE2BE20236E49B100A7AF67 /* PublicHuntSearchViewController.swift */,
+				1FE2BE22236E4A7900A7AF67 /* PrivateHuntViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1FA970FA2389FE10003B405D /* Table Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FA970F72389FD98003B405D /* Public_PrivateTable.swift */,
+				1FAA2713238ADCA200A7C64F /* WaypointListTableViewCell.swift */,
+			);
+			path = "Table Controllers";
+			sourceTree = "<group>";
+		};
 		1FE3C6622357E34C00C99BEC = {
 			isa = PBXGroup;
 			children = (
@@ -126,19 +151,16 @@
 		1FE3C66D2357E34C00C99BEC /* Cached */ = {
 			isa = PBXGroup;
 			children = (
+				1FA970FA2389FE10003B405D /* Table Controllers */,
+				1FA970F92389FDF2003B405D /* View Controllers */,
 				1FE3C66E2357E34C00C99BEC /* AppDelegate.swift */,
-				1FE3C6702357E34C00C99BEC /* MapViewController.swift */,
-				1FE3C6722357E34C00C99BEC /* HuntCreationViewController.swift */,
 				1FE3C6742357E34C00C99BEC /* main.storyboard */,
 				1FE3C6772357E34D00C99BEC /* Assets.xcassets */,
 				1FE3C6792357E34D00C99BEC /* LaunchScreen.storyboard */,
 				1FE3C67C2357E34D00C99BEC /* Info.plist */,
 				3A7178EA236FFAC0008D817C /* Location.swift */,
-				1FE2BE1E236E489600A7AF67 /* WaypointCreationViewController.swift */,
-				1FE2BE20236E49B100A7AF67 /* PublicHuntSearchViewController.swift */,
 				6A4C05182378CF2900EA42E0 /* Hunt.swift */,
 				6AE0742B2381C94F000DE309 /* Waypoint.swift */,
-				1FE2BE22236E4A7900A7AF67 /* PrivateHuntViewController.swift */,
 				6A4C05112377B07300EA42E0 /* GoogleService-Info.plist */,
 			);
 			path = Cached;
@@ -251,7 +273,9 @@
 				1FE3C66F2357E34C00C99BEC /* AppDelegate.swift in Sources */,
 				3A7178EB236FFAC0008D817C /* Location.swift in Sources */,
 				1FE2BE1F236E489600A7AF67 /* WaypointCreationViewController.swift in Sources */,
+				1FAA2714238ADCA200A7C64F /* WaypointListTableViewCell.swift in Sources */,
 				6A4C05192378CF2900EA42E0 /* Hunt.swift in Sources */,
+				1FA970F82389FD98003B405D /* Public_PrivateTable.swift in Sources */,
 				6AE0742C2381C94F000DE309 /* Waypoint.swift in Sources */,
 				1FE3C6712357E34C00C99BEC /* MapViewController.swift in Sources */,
 				1FE2BE21236E49B100A7AF67 /* PublicHuntSearchViewController.swift in Sources */,

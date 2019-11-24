@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import os.log
 
 class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
-    @IBOutlet weak var LocationPicker: UITextField!
     
-    let picker = UIPickerView()
-    
-    var pickerData: [String] = [String]()
+    // Outlets
+    @IBOutlet weak var savebutton: UIBarButtonItem!
+    @IBOutlet weak var waypointName: UITextField!
+    @IBOutlet weak var waypointClue: UITextField!
+    @IBOutlet weak var waypointRadius: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,48 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         
         picker.delegate = self
         
-        pickerData = ["Address", "Coordinates", "Pick on Map"]
+        pickerData = ["", "Address", "Coordinates"]
         
         LocationPicker.inputView = picker
         
         createPickerDoneToolbar()
     }
+    
+    //MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+        guard let button = sender as? UIBarButtonItem, button === savebutton else { os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return}
+        
+        let name = waypointName.text
+        let clue = waypointClue.text
+        let lat = 0.0
+        let long = 0.0
+        let radius = Int(waypointRadius.text!)
+        
+        var waypoint = Waypoint(name: name ?? "", clue: clue ?? "", latitude: lat ?? 0.0, longitude: long ?? 0.0, radius: radius ?? 0, id: "")
+        
+    }
+    
+    // Save and cancel functions
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func save(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: UIPickerView
+    
+    @IBOutlet weak var LocationPicker: UITextField!
+    
+    let picker = UIPickerView()
+    
+    var pickerData: [String] = [String]()
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
