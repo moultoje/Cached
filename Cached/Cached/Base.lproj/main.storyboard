@@ -30,15 +30,15 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-VY-tGy">
-                                <rect key="frame" x="334" y="56" width="60" height="30"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="334" y="54" width="60" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Mos-ue-WPM"/>
                                     <constraint firstAttribute="height" constant="30" id="xhO-uH-L07"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Found">
-                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -52,13 +52,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm5-gx-R7P">
                                 <rect key="frame" x="20" y="730" width="68" height="24"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="6Pa-br-xzW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
-                                <state key="normal" title="Center" image="location.circle.fill" catalog="system">
-                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Center" image="location.circle.fill">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -75,14 +75,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eze-cK-cJJ">
                                 <rect key="frame" x="20" y="760" width="68" height="30"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="RQL-Ro-NUx"/>
                                     <constraint firstAttribute="height" constant="30" id="m0j-vB-Xc3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="View" image="map.fill" catalog="system">
-                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="View" image="map.fill">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -160,6 +160,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="sry-32-cYq">
                             <connections>
                                 <action selector="Done:" destination="Wml-6Y-Zzz" id="0hD-9v-lWh"/>
+                                <segue destination="Gg6-Ou-Uh4" kind="unwind" unwindAction="unwindToMap:" id="CU5-4d-bFO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -168,6 +169,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsU-Bz-EWT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Gg6-Ou-Uh4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2655.072463768116" y="116.51785714285714"/>
         </scene>
@@ -186,7 +188,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Search Public Treasure Hunt">
-                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="0Jz-4r-udw" kind="show" id="SgI-kO-O8K"/>
@@ -196,7 +198,7 @@
                                 <rect key="frame" x="0.0" y="403.66666666666669" width="414" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Join Private Treasure Hunt">
-                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="kEr-3F-8vb" kind="show" id="wjg-R7-tgT"/>
@@ -206,7 +208,7 @@
                                 <rect key="frame" x="0.0" y="453.66666666666669" width="414" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create Treasure Hunt">
-                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="4jb-xT-M2t" kind="show" id="X76-v9-Q5y"/>
@@ -498,7 +500,7 @@
         <scene sceneID="wr3-I8-sKK">
             <objects>
                 <viewController title="Add Waypoint" id="MTF-c4-A0i" customClass="WaypointCreationViewController" customModule="Cached" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IXG-gh-kAl">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="IXG-gh-kAl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -686,6 +688,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ww5-94-dIo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dfF-gL-fd3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -699,9 +702,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folder.fill" catalog="system" width="64" height="46"/>
-        <image name="location.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="location.fill" catalog="system" width="64" height="56"/>
-        <image name="map.fill" catalog="system" width="64" height="56"/>
+        <image name="folder.fill" width="64" height="46"/>
+        <image name="location.circle.fill" width="64" height="60"/>
+        <image name="location.fill" width="64" height="56"/>
+        <image name="map.fill" width="64" height="56"/>
     </resources>
 </document>
