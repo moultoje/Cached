@@ -19,13 +19,6 @@ class PublicHuntSearchViewController: UIViewController, UITableViewDataSource, U
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    
-    // Done button behaviour
-    /*
-    @IBAction func Done(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
- */
 
     let db = Firestore.firestore()
     

@@ -10,17 +10,16 @@ import UIKit
 import MapKit
 import Foundation
 import CoreLocation
+import Firebase
 
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    
-
-    var currentHunt: Hunt = Hunt(dictionary:["String":""],id:"")
 
     let locationManager = CLLocationManager()
     
-    
+    var currentHunt: Hunt = Hunt(dictionary:["String":""],id:"")
+    public var waypoints: [Waypoint] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +33,22 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(true)
         print(currentHunt)
+        
+        for ref in currentHunt.listWaypoints {
+            print(ref)
+            let docRef = Firestore.firestore().collection("waypoints").document(ref)
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let waypoint = Waypoint(dictionary: document.data() ?? ["String": ""], id: document.documentID)
+                    self.waypoints.append(waypoint)
+                    print(self.waypoints)
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        }
+        
     }
     
     func checkLocationServices() {
