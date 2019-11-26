@@ -28,7 +28,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-VY-tGy">
-                                <rect key="frame" x="334" y="54" width="60" height="30"/>
+                                <rect key="frame" x="334" y="56" width="60" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Mos-ue-WPM"/>
@@ -76,7 +76,7 @@
                                 <rect key="frame" x="326" y="765" width="68" height="28"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="View" image="map.fill">
+                                <state key="normal" title="View" image="map.fill" catalog="system">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -565,8 +565,6 @@
         <!--Add Waypoint-->
         <scene sceneID="wr3-I8-sKK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jiF-oy-ahZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="wj7-Xr-h20" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController title="Add Waypoint" id="MTF-c4-A0i" customClass="WaypointCreationViewController" customModule="Cached" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IXG-gh-kAl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -723,6 +721,8 @@
                         <outlet property="waypointRadius" destination="pM7-mT-2bs" id="BVZ-rl-Fy3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jiF-oy-ahZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wj7-Xr-h20" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5092.753623188406" y="805.58035714285711"/>
         </scene>
