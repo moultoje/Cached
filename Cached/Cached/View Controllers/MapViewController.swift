@@ -14,8 +14,13 @@ import CoreLocation
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    
+
+    var currentHunt: Hunt = Hunt(dictionary:["String":""],id:"")
 
     let locationManager = CLLocationManager()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.userTrackingMode = .follow
         
         checkLocationServices()
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(true)
+        print(currentHunt)
     }
     
     func checkLocationServices() {
@@ -61,6 +71,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.mapType = MKMapType.standard
         }
     }
+    
+    @IBAction func unwindToMap(_ sender: UIStoryboardSegue) {}
     
 }
 

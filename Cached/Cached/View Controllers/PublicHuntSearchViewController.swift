@@ -21,17 +21,18 @@ class PublicHuntSearchViewController: UIViewController, UITableViewDataSource, U
     }
     
     // Done button behaviour
+    /*
     @IBAction func Done(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+ */
 
     let db = Firestore.firestore()
     
     private var documents: [DocumentSnapshot] = []
     public var hunts: [Hunt] = []
-    public var index = 0
+    public var selectedHunt: Hunt = Hunt(dictionary: ["String":""], id:"")
     private var listener : ListenerRegistration!
-
 
 
     fileprivate var query: Query? {
@@ -51,7 +52,7 @@ class PublicHuntSearchViewController: UIViewController, UITableViewDataSource, U
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-            print("HERE!!!!!!")
+         //   print("HERE!!!!!!")
  
        self.query = publicQuery()
 /*
@@ -120,7 +121,7 @@ extension PublicHuntSearchViewController{
         
         let item = self.hunts[indexPath.row]
         
-        print("\(item.listWaypoints.count)")
+        //print("\(item.listWaypoints.count)")
         
         cell.textLabel?.text = item.name
         cell.textLabel?.textColor = UIColor.black
@@ -130,7 +131,15 @@ extension PublicHuntSearchViewController{
         
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedHunt = self.hunts[indexPath.row]
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let destVC = segue.destination as! MapViewController
+        destVC.currentHunt = selectedHunt
+    }
     
 }
 

@@ -19,9 +19,11 @@ struct Waypoint {
     
     var dictionary:[String:Any]{
         return [
+            "name": name,
             "clue": clue,
             "latitude": latitude,
-            "longitude": longitude
+            "longitude": longitude,
+            "radius": radius
         ]
     }
 }
