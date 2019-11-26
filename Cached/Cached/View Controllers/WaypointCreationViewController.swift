@@ -32,6 +32,8 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     
     //MARK: Navigation
     
+    var waypoint: Waypoint!
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue, sender: sender)
@@ -45,7 +47,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         let long = 0.0
         let radius = Int(waypointRadius.text!)
         
-        var waypoint = Waypoint(name: name ?? "", clue: clue ?? "", latitude: lat ?? 0.0, longitude: long ?? 0.0, radius: radius ?? 0, id: "")
+        waypoint = Waypoint(name: name ?? "", clue: clue ?? "", latitude: lat ?? 0.0, longitude: long ?? 0.0, radius: radius ?? 0, id: "")
         
     }
     

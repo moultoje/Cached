@@ -10,8 +10,15 @@ import UIKit
 import Firebase
 import os.log
 
-class HuntCreationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
+class HuntCreationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
+    
+    // Text field delegates
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet var textFields: [UITextField]!
+    
     // Cancel button behavior
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
@@ -41,47 +48,43 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    @IBOutlet weak var saveStatus: UIBarButtonItem!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        addNewWaypoint()
-        addNewWaypoint()
-        
-        self.waypointTable.rowHeight = CGFloat(120)
-        tableHeight.constant = CGFloat(120 * waypoints.count)
+        updateSaveButtonStatus()
+        updateTableHeight()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        loadSampleWaypoint()
+        nameTextField.delegate = self
+        descriptionTextField.delegate = self
+        emailTextField.delegate = self
+        
+        updateSaveButtonStatus()
     }
+    
+    func textFieldDidEndEditing(_ textFields: UITextField) {
+        updateSaveButtonStatus()
+    }
+    
+    func textFieldShouldReturn(_ textFields: UITextField) -> Bool {
+        updateSaveButtonStatus()
+        self.view.endEditing(true)
+        
+        return true
+    }
+    
     
     //MARK: UITableViewDataSource
     @IBOutlet weak var waypointTable: UITableView!
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     
     var waypoints = [Waypoint]()
-    
-    private func loadSampleWaypoint(){
-        let waypoint1 = Waypoint(name: "TestWaypoint", clue: "This is a test Waypoint", latitude: 173.00, longitude: 134.00, radius: 150, id: "")
-        
-        waypoints += [waypoint1]
-        
-        self.waypointTable.reloadData()
-        
-        os_log("Created waypoint", log: OSLog.default, type: .debug)
-    }
-    
-    private func addNewWaypoint(){
-        let waypoint2 = Waypoint(name: "AnotherWaypoint", clue: "Another waypoint added", latitude: 123.54, longitude: 89.33, radius: 160, id: "")
-        
-        waypoints += [waypoint2]
-        self.waypointTable.reloadData()
-        
-        os_log("Additional waypoing", log: OSLog.default, type: .debug)
-    }
     
     func numberOfSections(in waypointTable: UITableView) -> Int {
         return 1;
@@ -103,6 +106,34 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
         cell?.radiusLabel.text = String(waypoint.radius)
         
         return cell!
+    }
+    
+    //MARK: Actions
+    @IBAction func unwindToWaypointTable(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.source as? WaypointCreationViewController, let newWaypoint = sourceViewController.waypoint{
+            let newIndexPath = IndexPath(row: waypoints.count, section: 0)
+            
+            waypoints.append(newWaypoint)
+            waypointTable.insertRows(at: [newIndexPath], with: .automatic)
+        }
+        
+        updateSaveButtonStatus()
+        updateTableHeight()
+    }
+    
+    //MARK: Private Methods
+    
+    private func updateSaveButtonStatus() {
+        // Disable save button when text field is empty
+        let text1 = nameTextField.text ?? ""
+        let text2 = descriptionTextField.text ?? ""
+        let text3 = emailTextField.text ?? ""
+        saveStatus.isEnabled = !(text1.isEmpty || text2.isEmpty || text3.isEmpty || waypoints.count == 0)
+    }
+    
+    private func updateTableHeight(){
+        self.waypointTable.rowHeight = CGFloat(120)
+        tableHeight.constant = CGFloat(120 * waypoints.count)
     }
     
 }

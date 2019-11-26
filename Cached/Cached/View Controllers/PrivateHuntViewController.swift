@@ -35,11 +35,6 @@ class PrivateHuntViewController: UIViewController, UITextFieldDelegate {
     
 //MARK: UITextFieldDelegate
     
-    func textFieldDidBeginEditing(_ private_id_text: UITextField) {
-        // Disable done button
-        done_status.isEnabled = false
-    }
-    
     func textFieldDidEndEditing(_ private_id_text: UITextField) {
         updateDoneButtonStatus()
     }
