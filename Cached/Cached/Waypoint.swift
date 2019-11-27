@@ -15,7 +15,7 @@ struct Waypoint {
     var latitude: Double
     var longitude: Double
     var radius: Int
-    var id: String?
+    var id: String
     
     var dictionary:[String:Any]{
         return [
@@ -35,6 +35,7 @@ extension Waypoint {
         latitude = dictionary["latitude"] as? Double ?? 0
         longitude = dictionary["longitude"] as? Double ?? 0
         radius = dictionary["radius"] as? Int ?? 0
+        self.id = id
         
         /*
          self.init(name: name, isPrivate: isPrivate, creator: creator, description: description, generalLocation: generalLocation, numberWaypoints: numberWaypoints, listWaypoints: listWaypoints, id: id)

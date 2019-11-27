@@ -34,19 +34,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewWillAppear(true)
         print(currentHunt)
         
-        for ref in currentHunt.listWaypoints {
-            print(ref)
-            let docRef = Firestore.firestore().collection("waypoints").document(ref)
-            
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let waypoint = Waypoint(dictionary: document.data() ?? ["String": ""], id: document.documentID)
-                    self.waypoints.append(waypoint)
-                    print(self.waypoints)
-                } else {
-                    print("Document does not exist")
-                }
-            }
+        print(self.waypoints)
+        
+        for currentWaypoint in self.waypoints {
+            print("\(currentWaypoint.name), \(currentWaypoint.clue), \(currentWaypoint.latitude), \(currentWaypoint.longitude), \(currentWaypoint.radius), \(currentWaypoint.id)")
         }
         
     }

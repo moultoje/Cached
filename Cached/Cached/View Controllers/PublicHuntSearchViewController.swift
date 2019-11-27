@@ -26,7 +26,7 @@ class PublicHuntSearchViewController: UIViewController, UITableViewDataSource, U
     public var hunts: [Hunt] = []
     public var selectedHunt: Hunt = Hunt(dictionary: ["String":""], id:"")
     private var listener : ListenerRegistration!
-
+    public var waypointsArray: [Waypoint] = []
 
     fileprivate var query: Query? {
         didSet {
@@ -126,12 +126,28 @@ extension PublicHuntSearchViewController{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedHunt = self.hunts[indexPath.row]
+        
+        for ref in selectedHunt.listWaypoints {
+            print(ref)
+            let docRef = Firestore.firestore().collection("waypoints").document(ref)
+            
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let waypoint = Waypoint(dictionary: document.data() ?? ["String": ""], id: document.documentID)
+                    self.waypointsArray.append(waypoint)
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        }
+        
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let destVC = segue.destination as! MapViewController
         destVC.currentHunt = selectedHunt
+        destVC.waypoints = waypointsArray
     }
     
 }
