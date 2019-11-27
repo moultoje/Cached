@@ -10,17 +10,16 @@ import UIKit
 import MapKit
 import Foundation
 import CoreLocation
+import Firebase
 
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    
-
-    var currentHunt: Hunt = Hunt(dictionary:["String":""],id:"")
 
     let locationManager = CLLocationManager()
     
-    
+    var currentHunt: Hunt = Hunt(dictionary:["String":""],id:"")
+    public var waypoints: [Waypoint] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +33,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(true)
         print(currentHunt)
+        
+        print(self.waypoints)
+        
+        for currentWaypoint in self.waypoints {
+            print("\(currentWaypoint.name), \(currentWaypoint.clue), \(currentWaypoint.latitude), \(currentWaypoint.longitude), \(currentWaypoint.radius), \(currentWaypoint.id)")
+        }
+        
     }
     
     func checkLocationServices() {
