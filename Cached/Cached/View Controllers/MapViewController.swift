@@ -64,7 +64,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         if let userLocation = mapView.userLocation.location?.coordinate {
             
             let region = MKCoordinateRegion(
-                center: userLocation, latitudinalMeters: 2000, longitudinalMeters: 2000)
+                center: userLocation, latitudinalMeters: 1275, longitudinalMeters: 1275)
             
             mapView.setRegion(region, animated: true)
         }

@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import MapKit
+import Foundation
+import CoreLocation
 import os.log
 
-class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, MKMapViewDelegate {
     
     // Outlets
     @IBOutlet weak var savebutton: UIBarButtonItem!
     @IBOutlet weak var waypointName: UITextField!
     @IBOutlet weak var waypointClue: UITextField!
     @IBOutlet weak var waypointRadius: UITextField!
+    @IBOutlet weak var waypointMapView: MKMapView!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +34,8 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         LocationPicker.inputView = picker
         
         createPickerDoneToolbar()
+        
+        waypointMapView.userTrackingMode = .follow
     }
     
     //MARK: Navigation
