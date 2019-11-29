@@ -117,8 +117,10 @@ extension PublicHuntSearchViewController{
         //print("\(item.listWaypoints.count)")
         
         cell.textLabel?.text = item.name
-        cell.textLabel?.textColor = UIColor.black
+        cell.textLabel?.textColor = UIColor(named: "SystemTextColor")
         cell.detailTextLabel?.text = item.description
+        cell.detailTextLabel?.textColor = UIColor(named: "SystemTextColor")
+        cell.backgroundColor = UIColor(named: "CachedBackgroundColor")
         
         return cell
         
