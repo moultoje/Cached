@@ -86,6 +86,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func unwindToMap(_ sender: UIStoryboardSegue) {}
     
+    //MARK: Found Button
+    @IBAction func foundButton(_ sender: Any) {
+        //Waypoint not found
+        let alert = UIAlertController(title: "Outside of Waypoint Radius", message: "You have not found the waypoint yet.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"Waypoint Not Found\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 
