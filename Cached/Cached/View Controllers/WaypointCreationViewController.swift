@@ -8,6 +8,7 @@
 
 import UIKit
 import os.log
+import Firebase
 
 class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -47,17 +48,40 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         let long = 0.0
         let radius = Int(waypointRadius.text!)
         
-        waypoint = Waypoint(name: name ?? "", clue: clue ?? "", latitude: lat ?? 0.0, longitude: long ?? 0.0, radius: radius ?? 0, id: "")
+        waypoint = Waypoint(name: name ?? "", clue: clue ?? "", latitude: lat, longitude: long, radius: radius ?? 0, id: "")
+ 
+        print("HERE!!!!")
+        let db = Firestore.firestore()
+        
+        var ref: DocumentReference? = nil
+        ref = db.collection("waypoints").addDocument(data: [
+            "name": waypointName.text ?? "",
+            "clue": waypointClue.text ?? "",
+            "latitude": lat,
+            "longitude": long,
+            "radius": Int(waypointRadius.text!) ?? 50
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Waypoint Document added with ID: \(ref!.documentID)")
+                let destVC = segue.destination as! HuntCreationViewController
+                destVC.waypointsRef.append(ref!.documentID)            }
+        }
+
         
     }
     
     // Save and cancel functions
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func save(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+
+        
     }
     
     //MARK: UIPickerView
