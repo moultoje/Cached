@@ -347,8 +347,8 @@
                                                                     <color key="textColor" name="SystemTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgx-8n-PEx">
-                                                                    <rect key="frame" x="108.66666666666667" y="86.666666666666671" width="30.000000000000014" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgx-8n-PEx">
+                                                                    <rect key="frame" x="108.66666666666667" y="86.666666666666671" width="53.333333333333329" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" name="SystemTextColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -649,14 +649,14 @@
                                                 <color key="textColor" name="SystemTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius (ft)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fF-1y-8ek">
-                                                <rect key="frame" x="10" y="353" width="91" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius (meters)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fF-1y-8ek">
+                                                <rect key="frame" x="10" y="353" width="137.33333333333334" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" name="SystemTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Distance..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pM7-mT-2bs">
-                                                <rect key="frame" x="106" y="346" width="299" height="38"/>
+                                                <rect key="frame" x="152.33333333333337" y="346" width="252.66666666666663" height="38"/>
                                                 <color key="backgroundColor" name="CachedSecondaryBackgroundColor"/>
                                                 <color key="textColor" name="SystemTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>

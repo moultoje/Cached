@@ -100,7 +100,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
             "clue": waypointClue.text ?? "",
             "latitude": lat,
             "longitude": long,
-            "radius": Int(waypointRadius.text!) ?? 50
+            "radius": Int(waypointRadius.text!) ?? 20
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
