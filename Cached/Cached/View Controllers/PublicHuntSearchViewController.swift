@@ -48,19 +48,7 @@ class PublicHuntSearchViewController: UIViewController, UITableViewDataSource, U
          //   print("HERE!!!!!!")
  
        self.query = publicQuery()
-/*
-        db.collection("hunts").whereField("isPrivate", isEqualTo: false).getDocuments { (QuerySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            }else {
-               for document in QuerySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    let hunt = Hunt(dictionary: document.data(), id: document.documentID)
-                    self.hunts.append(hunt)
-                }
-            }
-        }
-*/
+
 
     }
     
