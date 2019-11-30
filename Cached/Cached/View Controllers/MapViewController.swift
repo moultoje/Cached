@@ -21,6 +21,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     var currentHunt: Hunt = Hunt(dictionary:["String":""],id:"")
     public var waypoints: [Waypoint] = []
+    var waypointIndex = 1;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewWillAppear(true)
         
         if(!waypoints.isEmpty){
-            clueText.text = waypoints[0].clue
+            clueText.text = waypoints[waypointIndex-1].clue
         }
         
         print(currentHunt)
@@ -88,6 +89,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     //MARK: Found Button
     @IBAction func foundButton(_ sender: Any) {
+        //Waypoint found, increment waypointIndex and update clue text.
+        waypointIndex += 1
+        clueText.text = waypoints[waypointIndex-1].clue
+        
         //Waypoint not found
         let alert = UIAlertController(title: "Outside of Waypoint Radius", message: "You have not found the waypoint yet.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in

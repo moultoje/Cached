@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina6_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Clue text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ig-OW-lzL">
-                                <rect key="frame" x="20" y="54" width="304" height="30"/>
+                                <rect key="frame" x="20" y="54" width="304" height="34"/>
                                 <color key="backgroundColor" name="CachedSecondaryBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -33,11 +31,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-VY-tGy">
-                                <rect key="frame" x="334" y="54" width="60" height="30"/>
+                                <rect key="frame" x="334" y="54" width="60" height="34"/>
                                 <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Mos-ue-WPM"/>
-                                    <constraint firstAttribute="height" constant="30" id="xhO-uH-L07"/>
+                                    <constraint firstAttribute="height" constant="34" id="xhO-uH-L07"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Found">
@@ -109,9 +107,9 @@
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Sim-VY-tGy" secondAttribute="trailing" constant="20" id="Gy3-HF-Kk4"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="Eze-cK-cJJ" secondAttribute="bottom" constant="20" id="Qsp-Q0-xko"/>
                             <constraint firstItem="5Ig-OW-lzL" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="10" id="UBK-n9-qqr"/>
-                            <constraint firstItem="Sim-VY-tGy" firstAttribute="centerY" secondItem="5Ig-OW-lzL" secondAttribute="centerY" id="XPw-mG-8JF"/>
                             <constraint firstItem="hiF-vo-Zzv" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="bGZ-wm-UVd"/>
                             <constraint firstItem="hiF-vo-Zzv" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="cFK-76-pA0"/>
+                            <constraint firstItem="5Ig-OW-lzL" firstAttribute="top" secondItem="Sim-VY-tGy" secondAttribute="top" id="d0y-tp-WcW"/>
                             <constraint firstItem="5Ig-OW-lzL" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="fdg-cy-L3K"/>
                             <constraint firstItem="Sim-VY-tGy" firstAttribute="leading" secondItem="5Ig-OW-lzL" secondAttribute="trailing" constant="10" id="mH0-X5-G94"/>
                             <constraint firstItem="Eze-cK-cJJ" firstAttribute="top" secondItem="fm5-gx-R7P" secondAttribute="bottom" constant="10" id="tJA-dF-AAu"/>
@@ -136,11 +134,11 @@
             <objects>
                 <viewController title="Public Treasure Hunt Search" id="Wml-6Y-Zzz" customClass="PublicHuntSearchViewController" customModule="Cached" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="woh-cs-IFc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wE2-ki-foF">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <color key="sectionIndexColor" name="SystemTextColor"/>
                                 <color key="sectionIndexBackgroundColor" name="CachedBackgroundColor"/>
@@ -253,11 +251,11 @@
             <objects>
                 <viewController title="New Treasure Hunt" id="8rJ-Kc-sve" customClass="HuntCreationViewController" customModule="Cached" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Clv-FS-MM2">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8b-0j-L8z">
                                         <rect key="frame" x="0.0" y="0.0" width="415" height="460"/>
@@ -298,7 +296,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="395" height="120"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8HL-YY-4Ub" id="QMN-37-KaN">
-                                                            <rect key="frame" x="0.0" y="0.0" width="395" height="119.66666666666667"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="395" height="120"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1p-dh-m5s">
@@ -427,7 +425,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vB-Pc-g8A">
-                                                <rect key="frame" x="122" y="204" width="22" height="24"/>
+                                                <rect key="frame" x="121.99999999999999" y="204" width="24.333333333333329" height="24"/>
                                                 <connections>
                                                     <segue destination="7t5-1Z-sVY" kind="show" identifier="addWaypoint" id="BzZ-EL-zP2"/>
                                                 </connections>
@@ -526,11 +524,11 @@
             <objects>
                 <viewController title="Join Private Hunt" id="RJv-b9-8yG" customClass="PrivateHuntViewController" customModule="Cached" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="joF-lP-3s3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAS-1c-Llk">
-                                <rect key="frame" x="0.0" y="433" width="414" height="84"/>
+                                <rect key="frame" x="0.0" y="388" width="414" height="88"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hunt ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVD-Ba-CFE">
                                         <rect key="frame" x="0.0" y="10" width="414" height="24"/>
@@ -539,7 +537,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter hunt ID..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhG-ud-EZa">
-                                        <rect key="frame" x="143" y="44" width="128.33333333333337" height="30"/>
+                                        <rect key="frame" x="139.33333333333331" y="44" width="135.33333333333331" height="34"/>
                                         <color key="backgroundColor" name="CachedSecondaryBackgroundColor"/>
                                         <color key="textColor" name="SystemTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -591,11 +589,11 @@
             <objects>
                 <viewController title="Add Waypoint" id="MTF-c4-A0i" customClass="WaypointCreationViewController" customModule="Cached" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IXG-gh-kAl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IW3-We-X8p">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZM-1g-8E5">
                                         <rect key="frame" x="0.0" y="0.0" width="415" height="698"/>
@@ -802,7 +800,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="5vP-dH-GR8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QuV-rE-ipV">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -821,7 +819,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="RbF-4p-zjc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1oF-gF-Qzn">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -840,7 +838,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ww5-94-dIo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dfF-gL-fd3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -859,7 +857,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="OC1-a4-B8H"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p7u-KZ-kt7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -875,7 +873,7 @@
     <resources>
         <image name="folder" catalog="system" width="64" height="46"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
-        <image name="map" catalog="system" width="64" height="56"/>
+        <image name="map" width="16" height="16"/>
         <image name="map.fill" catalog="system" width="64" height="56"/>
         <namedColor name="CachedBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
