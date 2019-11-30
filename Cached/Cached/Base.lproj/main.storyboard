@@ -55,10 +55,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm5-gx-R7P">
-                                <rect key="frame" x="326" y="727" width="68" height="28"/>
+                                <rect key="frame" x="332" y="727" width="64" height="28"/>
                                 <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="68" id="Si7-EQ-E8c"/>
                                     <constraint firstAttribute="height" constant="28" id="Wyo-ym-A5w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
@@ -79,7 +78,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eze-cK-cJJ">
-                                <rect key="frame" x="326" y="765" width="68" height="28"/>
+                                <rect key="frame" x="331" y="765" width="66" height="28"/>
                                 <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Terrain" image="map.fill" catalog="system">
@@ -102,8 +101,6 @@
                         <color key="backgroundColor" name="CachedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="hiF-vo-Zzv" secondAttribute="bottom" id="CJW-Qu-FUW"/>
-                            <constraint firstItem="Eze-cK-cJJ" firstAttribute="leading" secondItem="fm5-gx-R7P" secondAttribute="leading" id="GGs-BE-5Hz"/>
-                            <constraint firstItem="fm5-gx-R7P" firstAttribute="width" secondItem="Eze-cK-cJJ" secondAttribute="width" id="Gjn-Kg-yWt"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Sim-VY-tGy" secondAttribute="trailing" constant="20" id="Gy3-HF-Kk4"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="Eze-cK-cJJ" secondAttribute="bottom" constant="20" id="Qsp-Q0-xko"/>
                             <constraint firstItem="5Ig-OW-lzL" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="10" id="UBK-n9-qqr"/>
@@ -112,15 +109,17 @@
                             <constraint firstItem="5Ig-OW-lzL" firstAttribute="top" secondItem="Sim-VY-tGy" secondAttribute="top" id="d0y-tp-WcW"/>
                             <constraint firstItem="5Ig-OW-lzL" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="fdg-cy-L3K"/>
                             <constraint firstItem="Sim-VY-tGy" firstAttribute="leading" secondItem="5Ig-OW-lzL" secondAttribute="trailing" constant="10" id="mH0-X5-G94"/>
+                            <constraint firstItem="Eze-cK-cJJ" firstAttribute="centerX" secondItem="fm5-gx-R7P" secondAttribute="centerX" id="mXY-j8-VoD"/>
+                            <constraint firstItem="fm5-gx-R7P" firstAttribute="centerX" secondItem="Sim-VY-tGy" secondAttribute="centerX" id="nja-H5-c9D"/>
                             <constraint firstItem="Eze-cK-cJJ" firstAttribute="top" secondItem="fm5-gx-R7P" secondAttribute="bottom" constant="10" id="tJA-dF-AAu"/>
                             <constraint firstItem="Eze-cK-cJJ" firstAttribute="height" secondItem="fm5-gx-R7P" secondAttribute="height" id="vui-nk-0mK"/>
-                            <constraint firstItem="fm5-gx-R7P" firstAttribute="trailing" secondItem="Sim-VY-tGy" secondAttribute="trailing" id="wAG-bL-0Ma"/>
                             <constraint firstItem="hiF-vo-Zzv" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="xAT-Iv-GGr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="map" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="changeMapTypeText" destination="Eze-cK-cJJ" id="aWQ-7D-UNv"/>
                         <outlet property="clueText" destination="5Ig-OW-lzL" id="QsT-hS-I12"/>
                         <outlet property="mapView" destination="hiF-vo-Zzv" id="j3q-jL-BeX"/>
                     </connections>
@@ -189,7 +188,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbg-s4-6nF">
                                 <rect key="frame" x="0.0" y="353.66666666666669" width="414" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="YR1-eo-YZu"/>
                                 </constraints>
@@ -203,7 +202,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzD-q2-xdR">
                                 <rect key="frame" x="0.0" y="403.66666666666669" width="414" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Join Private Treasure Hunt">
                                     <color key="titleColor" name="SystemTextColor"/>
@@ -214,7 +213,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTW-U7-Z0W">
                                 <rect key="frame" x="0.0" y="453.66666666666669" width="414" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create Treasure Hunt">
                                     <color key="titleColor" name="SystemTextColor"/>
@@ -873,7 +872,7 @@
     <resources>
         <image name="folder" catalog="system" width="64" height="46"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
-        <image name="map" width="16" height="16"/>
+        <image name="map" catalog="system" width="64" height="56"/>
         <image name="map.fill" catalog="system" width="64" height="56"/>
         <namedColor name="CachedBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
