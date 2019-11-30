@@ -22,15 +22,17 @@
                             </mapView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Clue text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ig-OW-lzL">
                                 <rect key="frame" x="20" y="54" width="304" height="34"/>
+                                <color key="backgroundColor" name="CachedSecondaryBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
+                                <color key="textColor" name="SystemTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-VY-tGy">
                                 <rect key="frame" x="334" y="56" width="60" height="30"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Mos-ue-WPM"/>
                                     <constraint firstAttribute="height" constant="30" id="xhO-uH-L07"/>
@@ -51,13 +53,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm5-gx-R7P">
                                 <rect key="frame" x="326" y="727" width="68" height="28"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="Si7-EQ-E8c"/>
                                     <constraint firstAttribute="height" constant="28" id="Wyo-ym-A5w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
-                                <state key="normal" title="Center" image="location" catalog="system">
+                                <state key="normal" title="Center" image="location.fill">
                                     <color key="titleColor" name="SystemTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -75,7 +77,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eze-cK-cJJ">
                                 <rect key="frame" x="326" y="765" width="68" height="28"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="View" image="map.fill" catalog="system">
                                     <color key="titleColor" name="SystemTextColor"/>
@@ -94,7 +96,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="CachedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="hiF-vo-Zzv" secondAttribute="bottom" id="CJW-Qu-FUW"/>
                             <constraint firstItem="Eze-cK-cJJ" firstAttribute="leading" secondItem="fm5-gx-R7P" secondAttribute="leading" id="GGs-BE-5Hz"/>
@@ -218,7 +220,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="CachedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Cbg-s4-6nF" firstAttribute="centerX" secondItem="7wj-3q-UGD" secondAttribute="centerX" id="Iqn-jt-a97"/>
                             <constraint firstItem="fTW-U7-Z0W" firstAttribute="height" secondItem="Cbg-s4-6nF" secondAttribute="height" id="M53-fq-lrB"/>
@@ -234,7 +236,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7wj-3q-UGD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hunts" image="folder" catalog="system" id="sEo-li-YSN"/>
+                    <tabBarItem key="tabBarItem" title="Hunts" image="folder" id="sEo-li-YSN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1V-XV-2zY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -865,8 +867,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folder" catalog="system" width="64" height="46"/>
-        <image name="location" catalog="system" width="64" height="56"/>
+        <image name="folder" width="19" height="16"/>
+        <image name="location.fill" width="17" height="17"/>
         <image name="map" catalog="system" width="64" height="56"/>
         <image name="map.fill" catalog="system" width="64" height="56"/>
         <namedColor name="CachedBackgroundColor">
@@ -876,7 +878,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SystemTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

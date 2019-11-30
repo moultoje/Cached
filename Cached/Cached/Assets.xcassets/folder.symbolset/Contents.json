@@ -1,7 +1,8 @@
 {
   "symbols" : [
     {
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "folder.svg"
     }
   ],
   "info" : {
