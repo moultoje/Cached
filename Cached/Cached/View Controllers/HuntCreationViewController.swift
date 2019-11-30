@@ -32,18 +32,18 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
         
         var ref: DocumentReference? = nil
         ref = db.collection("hunts").addDocument(data: [
-            "name": "TestHunt",
-            "isPrivate": true,
-            "creator": "Katie",
-            "description": "test adding a hunt",
-            "generalLocation": "nowhere",
+            "name": nameTextField.text ?? "",
+            "isPrivate": false,
+            "creator": emailTextField.text ?? "",
+            "description": descriptionTextField.text ?? "",
+            "generalLocation": "",
             "numberWaypoints": 0,
-            "listWaypoints": []
+            "listWaypoints": waypointsRef
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
             } else {
-                print("Document added with ID: \(ref!.documentID)")
+                print("Hunt Document added with ID: \(ref!.documentID)")
             }
         }
     }
@@ -85,6 +85,7 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     
     var waypoints = [Waypoint]()
+    var waypointsRef: [String] = []
     
     func numberOfSections(in waypointTable: UITableView) -> Int {
         return 1;
