@@ -7,16 +7,22 @@
 //
 
 import UIKit
+import MapKit
+import Foundation
+import CoreLocation
 import os.log
 import Firebase
 
-class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, MKMapViewDelegate, UITextFieldDelegate {
     
     // Outlets
     @IBOutlet weak var savebutton: UIBarButtonItem!
     @IBOutlet weak var waypointName: UITextField!
     @IBOutlet weak var waypointClue: UITextField!
     @IBOutlet weak var waypointRadius: UITextField!
+    @IBOutlet weak var waypointMapView: MKMapView!
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet var textFields: [UITextField]!
     
@@ -41,6 +47,8 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         
         createPickerDoneToolbar()
         
+        waypointMapView.userTrackingMode = .follow
+
         self.view.layoutIfNeeded()
         
         setupAddressInfo()

@@ -744,6 +744,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="k0o-MB-s9a">
                             <connections>
+                                <action selector="save:" destination="MTF-c4-A0i" id="0yg-Jf-gkp"/>
                                 <segue destination="wj7-Xr-h20" kind="unwind" unwindAction="unwindToWaypointTableWithSender:" id="T2r-li-UWc"/>
                             </connections>
                         </barButtonItem>
@@ -755,6 +756,7 @@
                         <outlet property="saveButton" destination="k0o-MB-s9a" id="WqY-5g-4Rk"/>
                         <outlet property="savebutton" destination="k0o-MB-s9a" id="CJ4-ng-6dE"/>
                         <outlet property="waypointClue" destination="wSO-yt-rql" id="njO-wP-AuV"/>
+                        <outlet property="waypointMapView" destination="XBd-iV-gD4" id="KhR-2z-h8f"/>
                         <outlet property="waypointName" destination="oRy-Za-pwl" id="sX8-tG-fIW"/>
                         <outlet property="waypointRadius" destination="pM7-mT-2bs" id="BVZ-rl-Fy3"/>
                         <outletCollection property="textFields" destination="pM7-mT-2bs" collectionClass="NSMutableArray" id="LVR-as-1g0"/>
