@@ -50,6 +50,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="foundButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="5Hi-4L-IgJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm5-gx-R7P">
                                 <rect key="frame" x="326" y="727" width="68" height="28"/>
@@ -59,7 +62,7 @@
                                     <constraint firstAttribute="height" constant="28" id="Wyo-ym-A5w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
-                                <state key="normal" title="Center" image="location.fill">
+                                <state key="normal" title="Center" image="location.fill" catalog="system">
                                     <color key="titleColor" name="SystemTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -79,7 +82,7 @@
                                 <rect key="frame" x="326" y="765" width="68" height="28"/>
                                 <color key="backgroundColor" name="CachedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="View" image="map.fill" catalog="system">
+                                <state key="normal" title="Terrain" image="map.fill" catalog="system">
                                     <color key="titleColor" name="SystemTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -236,7 +239,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7wj-3q-UGD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hunts" image="folder" id="sEo-li-YSN"/>
+                    <tabBarItem key="tabBarItem" title="Hunts" image="folder" catalog="system" id="sEo-li-YSN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1V-XV-2zY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -867,8 +870,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folder" width="19" height="16"/>
-        <image name="location.fill" width="17" height="17"/>
+        <image name="folder" catalog="system" width="64" height="46"/>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
         <image name="map" catalog="system" width="64" height="56"/>
         <image name="map.fill" catalog="system" width="64" height="56"/>
         <namedColor name="CachedBackgroundColor">
