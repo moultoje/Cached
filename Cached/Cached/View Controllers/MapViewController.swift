@@ -15,7 +15,8 @@ import Firebase
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-
+    @IBOutlet weak var clueText: UITextField!
+    
     let locationManager = CLLocationManager()
     
     var currentHunt: Hunt = Hunt(dictionary:["String":""],id:"")
@@ -32,6 +33,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(true)
+        
+        if(!waypoints.isEmpty){
+            clueText.text = waypoints[0].clue
+        }
+        
         print(currentHunt)
         
         print(self.waypoints)
