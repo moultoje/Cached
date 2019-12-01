@@ -389,6 +389,7 @@
                                                             <outlet property="longLabel" destination="pic-Fy-e4x" id="OtT-UL-IZL"/>
                                                             <outlet property="nameLabel" destination="l1p-dh-m5s" id="12S-TO-nNZ"/>
                                                             <outlet property="radiusLabel" destination="S5H-UU-V6C" id="XhH-47-tgB"/>
+                                                            <segue destination="MTF-c4-A0i" kind="show" identifier="editWaypoint" id="XBa-e7-dI1"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -866,7 +867,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lti-VK-EIr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3664" y="806"/>
+            <point key="canvasLocation" x="3612" y="483"/>
         </scene>
     </scenes>
     <resources>
@@ -884,4 +885,7 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XBa-e7-dI1"/>
+    </inferredMetricsTieBreakers>
 </document>

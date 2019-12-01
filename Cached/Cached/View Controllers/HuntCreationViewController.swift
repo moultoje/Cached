@@ -53,6 +53,8 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        waypointTable.reloadData()
+        
         updateSaveButtonStatus()
         updateTableHeight()
     }
@@ -112,14 +114,49 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
     //MARK: Actions
     @IBAction func unwindToWaypointTable(sender: UIStoryboardSegue){
         if let sourceViewController = sender.source as? WaypointCreationViewController, let newWaypoint = sourceViewController.waypoint{
-            let newIndexPath = IndexPath(row: waypoints.count, section: 0)
-            
-            waypoints.append(newWaypoint)
-            waypointTable.insertRows(at: [newIndexPath], with: .automatic)
+            if let selectedIndexPath = waypointTable.indexPathForSelectedRow {
+                // Update an existing meal.
+                waypoints[selectedIndexPath.row] = newWaypoint
+                waypointTable.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            else {
+                let newIndexPath = IndexPath(row: waypoints.count, section: 0)
+                
+                waypoints.append(newWaypoint)
+                waypointTable.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
         
         updateSaveButtonStatus()
         updateTableHeight()
+    }
+    
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? ""){
+        case "addWaypoint":
+            print("Adding a waypoint")
+        case "editWaypoint":
+            guard let waypointDetailViewController = segue.destination as? WaypointCreationViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+             
+            guard let selectedWaypointCell = sender as? WaypointListTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+             
+            guard let indexPath = waypointTable.indexPath(for: selectedWaypointCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+             
+            let selectedWaypoint = waypoints[indexPath.row]
+            waypointDetailViewController.waypoint = selectedWaypoint
+        default:
+            print("Unidentified waypoint")
+        }
+        
     }
     
     //MARK: Private Methods

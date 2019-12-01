@@ -23,7 +23,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     @IBOutlet weak var waypointMapView: MKMapView!
     
     let locationManager = CLLocationManager()
-    
+        
     @IBOutlet var textFields: [UITextField]!
     
     override func viewDidLoad() {
@@ -36,8 +36,6 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         addressEntry.delegate = self
         latitudeEntry.delegate = self
         longitudeEntry.delegate = self
-        
-        updateSaveButtonStatus()
         
         picker.delegate = self
         
@@ -60,7 +58,21 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         
         textFields += [addressEntry, longitudeEntry, latitudeEntry]
         
-        LocationEntryHeight.constant = CGFloat(0)
+        if let curWaypoint = waypoint{
+            waypointName.text = curWaypoint.name
+            waypointClue.text = curWaypoint.clue
+            waypointRadius.text = String(curWaypoint.radius)
+            latitudeEntry.text = String(curWaypoint.latitude)
+            longitudeEntry.text = String(curWaypoint.longitude)
+            picker.selectRow(2, inComponent: 0, animated: true)
+            LocationPicker.text = pickerData[2]
+            locationMethod = pickerData[2]
+            addCoordinatesTextFields()
+        } else {
+            LocationEntryHeight.constant = CGFloat(0)
+        }
+        
+        updateSaveButtonStatus()
     }
     
     //MARK: Navigation
@@ -115,8 +127,15 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     
     // Save and cancel functions
     @IBAction func cancel(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let addingNewWaypoint = presentingViewController is UINavigationController
         
+        if addingNewWaypoint {
+            dismiss(animated: true, completion: nil)
+        } else if let owningNavController = navigationController {
+            owningNavController.popViewController(animated: true)
+        } else {
+            fatalError("Waypoint View Controller not in navigation controller")
+        }
     }
     
     @IBAction func save(_ sender: Any) {
@@ -175,6 +194,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
             locationMethod = pickerData[row]
         }
         
+        updateSaveButtonStatus()
     }
     
     func createPickerDoneToolbar(){
