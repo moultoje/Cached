@@ -27,7 +27,8 @@ class PublicHuntSearchViewController: UIViewController, UITableViewDataSource, U
     public var selectedHunt: Hunt = Hunt(dictionary: ["String":""], id:"")
     private var listener : ListenerRegistration!
     public var waypointsArray: [Waypoint] = []
-
+    public var waypointsTemp: [Waypoint] = []
+    
     fileprivate var query: Query? {
         didSet {
             if let listener = listener {
@@ -44,8 +45,6 @@ class PublicHuntSearchViewController: UIViewController, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-         //   print("HERE!!!!!!")
  
        self.query = publicQuery()
 
@@ -114,30 +113,61 @@ extension PublicHuntSearchViewController{
         
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedHunt = self.hunts[indexPath.row]
-        
-        for ref in selectedHunt.listWaypoints {
-            print(ref)
-            let docRef = Firestore.firestore().collection("waypoints").document(ref)
-            
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let waypoint = Waypoint(dictionary: document.data() ?? ["String": ""], id: document.documentID)
-                    self.waypointsArray.append(waypoint)
-                } else {
-                    print("Document does not exist")
-                }
+    func addWaypointClosure(docRef: DocumentReference, completionHandler: @escaping (Waypoint) -> Void) -> Void  {
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let waypoint = Waypoint(dictionary: document.data() ?? ["String": ""], id: document.documentID)
+                completionHandler(waypoint)
+            } else {
+                print("Error getting document")
             }
         }
+    }
+    
+    func addWaypointsCompletionHandler(waypoint: Waypoint) {
+        self.waypointsTemp.append(waypoint)
+        print("Added waypoint \(waypoint.name)")
+    }
+    
+    func getWaypointDoc(refID: String) -> DocumentReference {
+        let docRef = Firestore.firestore().collection("waypoints").document(refID)
+        return docRef
+    }
+    
+    func wrapper(refID: String) -> Void {
+        let docRef = getWaypointDoc(refID: refID)
+        addWaypointClosure(docRef: docRef, completionHandler: addWaypointsCompletionHandler)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedHunt = self.hunts[indexPath.row]
+        let refArray = selectedHunt.listWaypoints
         
+        refArray.forEach { ref in
+            wrapper(refID: ref)
+        }
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let destVC = segue.destination as! MapViewController
         destVC.currentHunt = selectedHunt
+        
+        //place waypoints in order of input
+        for id in selectedHunt.listWaypoints {
+            for way in waypointsTemp {
+                if way.id == id{
+                    waypointsArray.append(way)
+                }
+            }
+        }
+        
+        for k in waypointsArray {
+            print(k.name)
+        }
+
         destVC.waypoints = waypointsArray
+        print(waypointsArray)
     }
     
 }
