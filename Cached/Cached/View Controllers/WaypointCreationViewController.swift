@@ -78,6 +78,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     //MARK: Navigation
     
     var waypoint: Waypoint!
+    var locationLatLong = CLLocation()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -93,8 +94,9 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
             lat = Double(latitudeEntry.text!)!
             long = Double(longitudeEntry.text!)!
         } else if locationMethod == "Address" {
-            lat = getLatitude(address: addressEntry.text!)
-            long = getLongitude(address: addressEntry.text!)
+            print(locationLatLong)
+            lat = locationLatLong.coordinate.latitude
+            long = locationLatLong.coordinate.longitude
         }
         
         let name = waypointName.text
@@ -310,11 +312,14 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     
     //MARK: UITextField
     
-    func textFieldDidEndEditing(_ textFields: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonStatus()
     }
     
-    func textFieldShouldReturn(_ textFields: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == addressEntry {
+            getLatLong(addressString: addressEntry.text!)
+        }
         updateSaveButtonStatus()
         self.view.endEditing(true)
         
@@ -339,13 +344,18 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         }
     }
 
-    private func getLatitude(address: String) -> Double{
-        
-        return 2.0
-    }
-    
-    private func getLongitude(address: String) -> Double{
-        
-        return 1.0
+    private func getLatLong(addressString: String) {
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(addressString) { (placemarks, error) in
+            guard
+                let placemarks = placemarks,
+                let location = placemarks.first?.location
+            else {
+                // handle no location found
+                return
+            }
+            print(location)
+            self.locationLatLong = location
+        }
     }
 }
