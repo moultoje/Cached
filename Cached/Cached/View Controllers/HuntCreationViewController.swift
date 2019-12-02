@@ -115,7 +115,7 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
     @IBAction func unwindToWaypointTable(sender: UIStoryboardSegue){
         if let sourceViewController = sender.source as? WaypointCreationViewController, let newWaypoint = sourceViewController.waypoint{
             if let selectedIndexPath = waypointTable.indexPathForSelectedRow {
-                // Update an existing meal.
+                // Update an existing waypoint.
                 waypoints[selectedIndexPath.row] = newWaypoint
                 waypointTable.reloadRows(at: [selectedIndexPath], with: .none)
             }
@@ -153,6 +153,7 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
              
             let selectedWaypoint = waypoints[indexPath.row]
             waypointDetailViewController.waypoint = selectedWaypoint
+            waypointDetailViewController.documentID = waypointsRef[indexPath.row]
         default:
             print("Unidentified waypoint")
         }
