@@ -20,6 +20,7 @@
 		1FE3C67B2357E34D00C99BEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE3C6792357E34D00C99BEC /* LaunchScreen.storyboard */; };
 		1FE3C6A02357E44400C99BEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE3C69F2357E44400C99BEC /* MapKit.framework */; };
 		3A7178EB236FFAC0008D817C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7178EA236FFAC0008D817C /* Location.swift */; };
+		6A454B222396029700AF5616 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A454B212396029700AF5616 /* Validation.swift */; };
 		6A4C05122377B07300EA42E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A4C05112377B07300EA42E0 /* GoogleService-Info.plist */; };
 		6A4C05192378CF2900EA42E0 /* Hunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C05182378CF2900EA42E0 /* Hunt.swift */; };
 		6AD5783E236E464200B1BD7D /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD5783D236E464100B1BD7D /* nanopb.framework */; };
@@ -58,6 +59,7 @@
 		1FE3C67C2357E34D00C99BEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE3C69F2357E44400C99BEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3A7178EA236FFAC0008D817C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		6A454B212396029700AF5616 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		6A4C05112377B07300EA42E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A4C05182378CF2900EA42E0 /* Hunt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hunt.swift; sourceTree = "<group>"; };
 		6AD5783D236E464100B1BD7D /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				1FE3C67C2357E34D00C99BEC /* Info.plist */,
 				3A7178EA236FFAC0008D817C /* Location.swift */,
 				6A4C05182378CF2900EA42E0 /* Hunt.swift */,
+				6A454B212396029700AF5616 /* Validation.swift */,
 				6AE0742B2381C94F000DE309 /* Waypoint.swift */,
 				6A4C05112377B07300EA42E0 /* GoogleService-Info.plist */,
 			);
@@ -279,6 +282,7 @@
 				6AE0742C2381C94F000DE309 /* Waypoint.swift in Sources */,
 				1FE3C6712357E34C00C99BEC /* MapViewController.swift in Sources */,
 				1FE2BE21236E49B100A7AF67 /* PublicHuntSearchViewController.swift in Sources */,
+				6A454B222396029700AF5616 /* Validation.swift in Sources */,
 				1FE2BE23236E4A7900A7AF67 /* PrivateHuntViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

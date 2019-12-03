@@ -26,26 +26,39 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
     
     // Save button behavior
     @IBAction func save(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
         
-        let db = Firestore.firestore()
-        
-        var ref: DocumentReference? = nil
-        ref = db.collection("hunts").addDocument(data: [
-            "name": nameTextField.text ?? "",
-            "isPrivate": false,
-            "creator": emailTextField.text ?? "",
-            "description": descriptionTextField.text ?? "",
-            "generalLocation": "",
-            "numberWaypoints": 0,
-            "listWaypoints": waypointsRef
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Hunt Document added with ID: \(ref!.documentID)")
+        //validating text values
+        let response = Validation.shared.validate(values: (ValidationType.email, emailTextField.text ?? ""), (ValidationType.name, nameTextField.text ?? ""), (ValidationType.description, descriptionTextField.text ?? ""))
+        switch response {
+        case .success:
+            dismiss(animated: true, completion: nil)
+            let db = Firestore.firestore()
+            var ref: DocumentReference? = nil
+            ref = db.collection("hunts").addDocument(data: [
+                "name": nameTextField.text ?? "",
+                "isPrivate": false,
+                "creator": emailTextField.text ?? "",
+                "description": descriptionTextField.text ?? "",
+                "generalLocation": "",
+                "numberWaypoints": 0,
+                "listWaypoints": waypointsRef
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Hunt Document added with ID: \(ref!.documentID)")
+                }
             }
+            break
+        case .failure(_, let message):
+            print(message.localized())
+            let alert = UIAlertController(title: "Check Input", message: message.rawValue, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"Hunt Input Fields Empty or Invalid\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
+
     }
     
     @IBOutlet weak var saveStatus: UIBarButtonItem!
