@@ -26,6 +26,36 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         
     @IBOutlet var textFields: [UITextField]!
     
+    func wayPointMapView(_ waypointMapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else {print("no MKPointAnnotations"); return nil}
+        
+        let reuseID = "pin"
+        var pinView = waypointMapView.dequeueReusableAnnotationView(withIdentifier: reuseID) as? MKPinAnnotationView
+        
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            pinView!.canShowCallout = true
+            pinView!.rightCalloutAccessoryView = UIButton(type: .infoDark)
+        }
+        else {
+            pinView!.annotation = annotation
+        }
+        return pinView
+        
+        }
+    
+    func waypointMapView(_ waypointMapView: MKMapView, didSelect view: MKAnnotationView) {
+        print("tapped on pin")
+    }
+    
+    func wayPointMapView(_ waypointMapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            if let doSomething = view.annotation?.title! {
+                print("do something")
+            }
+        }
+    }
+    
     var documentID = ""
     
     override func viewDidLoad() {
@@ -47,8 +77,12 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         
         createPickerDoneToolbar()
         
+        waypointMapView.delegate = self
         waypointMapView.userTrackingMode = .follow
-
+        
+        let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
+        waypointMapView.addGestureRecognizer(longTapGesture)
+        
         self.view.layoutIfNeeded()
         
         setupAddressInfo()
@@ -75,6 +109,8 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         }
         
         updateSaveButtonStatus()
+        
+        
     }
     
     //MARK: Navigation
@@ -375,7 +411,21 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         }
     }
     
-
+    @objc func longTap(sender: UIGestureRecognizer) {
+        print("long tap")
+        if sender.state == .began {
+            let locationInView = sender.location(in: waypointMapView)
+            let locationOnMap = waypointMapView.convert(locationInView, toCoordinateFrom: waypointMapView)
+            addAnnotation(location: locationOnMap)
+        }
+    }
+    
+    func addAnnotation(location: CLLocationCoordinate2D) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = "Waypoint"
+        annotation.subtitle = "Current"
+        self.waypointMapView.addAnnotation(annotation)
+    }
 }
-
 
