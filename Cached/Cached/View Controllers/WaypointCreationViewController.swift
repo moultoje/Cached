@@ -56,6 +56,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         }
     }
     
+    var documentID = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,26 +143,42 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         
         waypoint = Waypoint(name: name ?? "", clue: clue ?? "", latitude: lat, longitude: long, radius: radius ?? 0, id: "")
  
-        print("HERE!!!!")
         let db = Firestore.firestore()
         
-        var ref: DocumentReference? = nil
-        ref = db.collection("waypoints").addDocument(data: [
-            "name": waypointName.text ?? "",
-            "clue": waypointClue.text ?? "",
-            "latitude": lat,
-            "longitude": long,
-            "radius": Int(waypointRadius.text!) ?? 20
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Waypoint Document added with ID: \(ref!.documentID)")
-                let destVC = segue.destination as! HuntCreationViewController
-                destVC.waypointsRef.append(ref!.documentID)            }
+        if documentID == "" {
+                var ref: DocumentReference? = nil
+                ref = db.collection("waypoints").addDocument(data: [
+                "name": waypointName.text ?? "",
+                "clue": waypointClue.text ?? "",
+                "latitude": lat,
+                "longitude": long,
+                "radius": Int(waypointRadius.text!) ?? 20
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Waypoint Document added with ID: \(ref!.documentID)")
+                    let destVC = segue.destination as! HuntCreationViewController
+                    destVC.waypointsRef.append(ref!.documentID)
+                }
+            }
+        } else  {
+            let ref = db.collection("waypoints").document(documentID)
+            //update the waypoint selected
+            ref.updateData([
+                "name": waypointName.text ?? "",
+                "clue": waypointClue.text ?? "",
+                "latitude": lat,
+                "longitude": long,
+                "radius": Int(waypointRadius.text!) ?? 20
+            ]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+            }
         }
-
-        
     }
     
     // Save and cancel functions
@@ -179,8 +196,6 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     
     @IBAction func save(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-
-        
     }
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
