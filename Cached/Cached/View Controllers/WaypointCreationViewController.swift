@@ -26,7 +26,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         
     @IBOutlet var textFields: [UITextField]!
     
-    func wayPointMapView(_ waypointMapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    /*func waypointMapView(_ waypointMapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else {print("no MKPointAnnotations"); return nil}
         
         let reuseID = "pin"
@@ -42,19 +42,32 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         }
         return pinView
         
+    }*/
+    
+    func mapView(_ waypointMapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKCircle {
+            let renderer = MKCircleRenderer(overlay: overlay)
+            renderer.fillColor = UIColor.black.withAlphaComponent(0.5)
+            renderer.strokeColor = UIColor.blue
+            renderer.lineWidth = 2
+            return renderer
+        
         }
+        
+        return MKOverlayRenderer()
+    }
     
     func waypointMapView(_ waypointMapView: MKMapView, didSelect view: MKAnnotationView) {
         print("tapped on pin")
     }
     
-    func wayPointMapView(_ waypointMapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    /*func wayPointMapView(_ waypointMapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
             if let doSomething = view.annotation?.title! {
                 print("do something")
             }
         }
-    }
+    }*/
     
     var documentID = ""
     
@@ -80,8 +93,8 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         waypointMapView.delegate = self
         waypointMapView.userTrackingMode = .follow
         
-        let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
-        waypointMapView.addGestureRecognizer(longTapGesture)
+        /*let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
+        waypointMapView.addGestureRecognizer(longTapGesture)*/
         
         self.view.layoutIfNeeded()
         
@@ -407,8 +420,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
                 let response = Validation.shared.validate(values: (ValidationType.coordinate, latitudeEntry.text ?? ""), (ValidationType.coordinate, longitudeEntry.text ?? ""))
                 switch response {
                 case .success:
-                    // Add call to add annotation here. Use DOUBLE(latitudeEntry.text) and DOUBLE(longitudeEntry.text) for coordinates. When call is added, remove print statement
-                    print("Coordinates valid")
+                    addMapAnnotation()
                 case .failure:
                     let alert = UIAlertController(title: "Coordinates Invalid", message: "Either the latitude or longitude is in an invalid format.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
@@ -417,6 +429,16 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
                     self.present(alert, animated: true, completion: nil)
                 }
                 
+            }
+        }
+        
+        if !(waypointRadius.text?.isEmpty ?? true) {
+            let response = Validation.shared.validate(values: (ValidationType.radius, waypointRadius.text ?? ""))
+            switch response {
+            case .success:
+                addMapRadius()
+            case .failure:
+                print("No radius to add.")
             }
         }
         
@@ -465,7 +487,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
                     }
                     print(location)
                     self.locationLatLong = location
-                    // Add call to add annotation here. Use locationLatLong for coordinates
+                    self.addMapAnnotation()
                 }
             case .failure:
                 let alert = UIAlertController(title: "Address Invalid", message: "Address is in an invalid format.", preferredStyle: .alert)
@@ -478,7 +500,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         
     }
     
-    @objc func longTap(sender: UIGestureRecognizer) {
+/*    @objc func longTap(sender: UIGestureRecognizer) {
         print("long tap")
         if sender.state == .began {
             let locationInView = sender.location(in: waypointMapView)
@@ -493,6 +515,47 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         annotation.title = "Waypoint"
         annotation.subtitle = "Current"
         self.waypointMapView.addAnnotation(annotation)
+    }*/
+    
+    private func addMapAnnotation() {
+        let curAnnotations = waypointMapView.annotations
+        if curAnnotations.count > 0 {
+            waypointMapView.removeAnnotations(curAnnotations)
+        }
+        
+        var newLocation:CLLocationCoordinate2D
+        if LocationPicker.text == "Coordinates" {
+            newLocation = CLLocationCoordinate2DMake(Double(latitudeEntry.text!) ?? 0.0, Double(longitudeEntry.text!) ?? 0.0)
+        } else {
+            newLocation = locationLatLong.coordinate
+        }
+        
+        let newAnnotation = MKPointAnnotation()
+        newAnnotation.coordinate = newLocation
+        newAnnotation.title = "Entered Location"
+        
+        waypointMapView.addAnnotation(newAnnotation)
+        
+        if !(waypointRadius.text?.isEmpty ?? true) {
+            addMapRadius()
+        }
+        
+        waypointMapView.showAnnotations([newAnnotation], animated: true)
+    }
+    
+    private func addMapRadius() {
+        let curOverlays = waypointMapView.overlays
+        if curOverlays.count > 0 {
+            waypointMapView.removeOverlays(curOverlays)
+        }
+        
+        let curAnnotations = waypointMapView.annotations
+        if curAnnotations.count > 0 {
+            let newCircle = MKCircle(center: curAnnotations[0].coordinate, radius: CLLocationDistance(waypointRadius.text!)!)
+            waypointMapView.addOverlay(newCircle)
+            //let newCircleRenderer = MKCircleRenderer(circle: newCircle)
+            //waypointMapView.addOverlay(newCircleRenderer)
+        }
     }
 }
 
