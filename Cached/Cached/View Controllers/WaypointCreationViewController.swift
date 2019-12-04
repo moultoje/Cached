@@ -39,10 +39,6 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         return MKOverlayRenderer()
     }
     
-    func waypointMapView(_ waypointMapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("tapped on pin")
-    }
-    
     var documentID = ""
     
     override func viewDidLoad() {
@@ -65,10 +61,6 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         createPickerDoneToolbar()
         
         waypointMapView.delegate = self
-        waypointMapView.userTrackingMode = .follow
-        
-        /*let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
-        waypointMapView.addGestureRecognizer(longTapGesture)*/
         
         self.view.layoutIfNeeded()
         
@@ -509,6 +501,7 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         if curAnnotations.count > 0 {
             let newCircle = MKCircle(center: curAnnotations[0].coordinate, radius: CLLocationDistance(waypointRadius.text!)!)
             waypointMapView.addOverlay(newCircle)
+            print("Add radius")
         }
     }
 }
