@@ -41,10 +41,5 @@ extension Hunt {
             generalLocation = dictionary["generalLocation"] as? String ?? ""
             numberWaypoints = dictionary["numberWaypoints"] as? Int ?? 0
             listWaypoints = dictionary["listWaypoints"] as? [String] ?? []
- //           else { return nil }
-
- /*
-        self.init(name: name, isPrivate: isPrivate, creator: creator, description: description, generalLocation: generalLocation, numberWaypoints: numberWaypoints, listWaypoints: listWaypoints, id: id)
-   */
     }
 }

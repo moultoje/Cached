@@ -36,9 +36,5 @@ extension Waypoint {
         longitude = dictionary["longitude"] as? Double ?? 0
         radius = dictionary["radius"] as? Int ?? 0
         self.id = id
-        
-        /*
-         self.init(name: name, isPrivate: isPrivate, creator: creator, description: description, generalLocation: generalLocation, numberWaypoints: numberWaypoints, listWaypoints: listWaypoints, id: id)
-         */
     }
 }
