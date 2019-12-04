@@ -36,7 +36,7 @@ enum RegEx: String {
     case email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" // Email
     case alphanumericString = "^[A-Za-z0-9 .,'!?@=+#()%*_<>$&;:\"]*$" //string with special chars
     case radius = "[0-9]{1,3}"
-    case address = "[A-Za-z0-9 .-]+,[A-Za-z .-]+,[A-Za-z ]+[0-9]{5}"
+    case address = "[A-Za-z0-9 .-]+,[A-Za-z .-]+,?[A-Za-z ]+[0-9]{5}"
     case coordinate = "[0-9-]+(?:.[0-9]+)*"
 }
 
@@ -46,7 +46,7 @@ enum AlertMessages: String {
     case invalidDescription = "Description Contains Prohibited Character"
     case invalidClue = "Clue Contains Prohibited Character"
     case invalidRadius = "Enter Radius Between 0 - 999 Meters"
-    case invalidAddress = "Enter Address in the form 'Street','City','State''Zip'"
+    case invalidAddress = "Enter Address in the form 'Street', 'City'[,] 'State' 'Zip'"
     case invalidCoordinate = "Coordinate formation invalid: #.#"
     
     case emptyEmail = "Please Enter Email"
