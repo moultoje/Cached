@@ -446,7 +446,6 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
 
     private func getLatLong(addressString: String) {
         if !(addressEntry.text?.isEmpty ?? true) {
-            // Add call to add annotation here. Use locationLatLong variable to access address lat and long
             let response = Validation.shared.validate(values: (ValidationType.address, addressEntry.text ?? ""))
             switch response {
             case .success:

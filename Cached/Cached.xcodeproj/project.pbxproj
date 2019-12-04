@@ -107,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FA1786323979DEF00C67FEE /* Firestore Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6A4C05182378CF2900EA42E0 /* Hunt.swift */,
+				6AE0742B2381C94F000DE309 /* Waypoint.swift */,
+			);
+			path = "Firestore Classes";
+			sourceTree = "<group>";
+		};
 		1FA970F92389FDF2003B405D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +157,7 @@
 		1FE3C66D2357E34C00C99BEC /* Cached */ = {
 			isa = PBXGroup;
 			children = (
+				1FA1786323979DEF00C67FEE /* Firestore Classes */,
 				1FA970FA2389FE10003B405D /* Table Controllers */,
 				1FA970F92389FDF2003B405D /* View Controllers */,
 				1FE3C66E2357E34C00C99BEC /* AppDelegate.swift */,
@@ -155,9 +165,7 @@
 				1FE3C6772357E34D00C99BEC /* Assets.xcassets */,
 				1FE3C6792357E34D00C99BEC /* LaunchScreen.storyboard */,
 				1FE3C67C2357E34D00C99BEC /* Info.plist */,
-				6A4C05182378CF2900EA42E0 /* Hunt.swift */,
 				6A454B212396029700AF5616 /* Validation.swift */,
-				6AE0742B2381C94F000DE309 /* Waypoint.swift */,
 				6A4C05112377B07300EA42E0 /* GoogleService-Info.plist */,
 			);
 			path = Cached;
@@ -438,7 +446,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Cached;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,7 +476,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Cached;
 				PRODUCT_NAME = "$(TARGET_NAME)";
