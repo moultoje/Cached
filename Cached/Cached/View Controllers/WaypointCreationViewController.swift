@@ -117,9 +117,29 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     
     var waypoint: Waypoint!
     var locationLatLong = CLLocation()
+
+    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+    
+     //validating text values
+     let response = Validation.shared.validate(values: (ValidationType.name, waypointName.text ?? ""), (ValidationType.clue, waypointClue.text ?? ""), (ValidationType.radius, waypointRadius.text ?? ""))
+     switch response {
+     case .success:
+        return true
+     case .failure(_, let message):
+        print(message.localized())
+        let alert = UIAlertController(title: "Check Input", message: message.rawValue, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"Hunt Input Fields Empty or Invalid\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+        return false
+     }
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+ 
         super.prepare(for: segue, sender: sender)
         
         guard let button = sender as? UIBarButtonItem, button === savebutton else { os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
