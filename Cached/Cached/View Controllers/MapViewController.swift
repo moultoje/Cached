@@ -15,7 +15,8 @@ import Firebase
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var clueText: UITextField!
+    //@IBOutlet weak var clueText: UITextField!
+    @IBOutlet weak var clueText: UITextView!
     
     let locationManager = CLLocationManager()
     

@@ -28,12 +28,16 @@ enum ValidationType {
     case description
     case clue
     case radius
+    case address
+    case coordinate
 }
 
 enum RegEx: String {
     case email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" // Email
     case alphanumericString = "^[A-Za-z0-9 .,'!?@=+#()%*_<>$&;:\"]*$" //string with special chars
     case radius = "[0-9]{1,3}"
+    case address = "[A-Za-z0-9 .-]+,[A-Za-z .-]+,[A-Za-z ]+[0-9]{5}"
+    case coordinate = "[0-9-]+(?:.[0-9]+)*"
 }
 
 enum AlertMessages: String {
@@ -42,12 +46,16 @@ enum AlertMessages: String {
     case invalidDescription = "Description Contains Prohibited Character"
     case invalidClue = "Clue Contains Prohibited Character"
     case invalidRadius = "Enter Radius Between 0 - 999 Meters"
+    case invalidAddress = "Enter Address in the form 'Street','City','State''Zip'"
+    case invalidCoordinate = "Coordinate formation invalid: #.#"
     
     case emptyEmail = "Please Enter Email"
     case emptyName = "Please Enter Hunt Name"
     case emptyDescription = "Please Enter Description"
     case emptyClue = "Please Enter Clue"
     case emptyRadius = "Please Enter Radius"
+    case emptyAddress = "Please Enter Address"
+    case emptyCoordinate = "Please Enter Both Coordinates"
     
     func localized() -> String {
         return NSLocalizedString(self.rawValue, comment: "")
@@ -79,6 +87,14 @@ class Validation: NSObject {
                 }
             case.radius:
                 if let tempValue = isValidString((valueToBeChecked.inputValue, .radius, .emptyRadius, .invalidRadius)) {
+                    return tempValue
+                }
+            case.address:
+                if let tempValue = isValidString((valueToBeChecked.inputValue, .address, .emptyAddress, .invalidAddress)) {
+                    return tempValue
+                }
+            case.coordinate:
+                if let tempValue = isValidString((valueToBeChecked.inputValue, .coordinate, .emptyCoordinate, .invalidCoordinate)) {
                     return tempValue
                 }
             }

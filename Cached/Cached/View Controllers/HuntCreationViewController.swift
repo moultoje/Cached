@@ -157,7 +157,7 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
             }
              
             guard let selectedWaypointCell = sender as? WaypointListTableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(String(describing: sender))")
             }
              
             guard let indexPath = waypointTable.indexPath(for: selectedWaypointCell) else {

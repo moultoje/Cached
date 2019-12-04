@@ -120,21 +120,34 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
 
     
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        // Check that a location picking method was chosen
+        if LocationPicker.text?.isEmpty ?? true {
+            let alert = UIAlertController(title: "Pick Location Entry Method", message: "Pick a location entry method and enter the location.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in NSLog("The \"Location Entry Method Empty\" alert occured.")}))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
     
-     //validating text values
-     let response = Validation.shared.validate(values: (ValidationType.name, waypointName.text ?? ""), (ValidationType.clue, waypointClue.text ?? ""), (ValidationType.radius, waypointRadius.text ?? ""))
-     switch response {
-     case .success:
-        return true
-     case .failure(_, let message):
-        print(message.localized())
-        let alert = UIAlertController(title: "Check Input", message: message.rawValue, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-            NSLog("The \"Hunt Input Fields Empty or Invalid\" alert occured.")
-        }))
-        self.present(alert, animated: true, completion: nil)
-        return false
-     }
+        //validating text values
+        var response:Valid
+        if LocationPicker.text == "Address" {
+            response = Validation.shared.validate(values: (ValidationType.name, waypointName.text ?? ""), (ValidationType.clue, waypointClue.text ?? ""), (ValidationType.radius, waypointRadius.text ?? ""), (ValidationType.address, addressEntry.text ?? ""))
+        } else {
+            response = Validation.shared.validate(values: (ValidationType.name, waypointName.text ?? ""), (ValidationType.clue, waypointClue.text ?? ""), (ValidationType.radius, waypointRadius.text ?? ""), (ValidationType.coordinate, latitudeEntry.text ?? ""), (ValidationType.coordinate, longitudeEntry.text ?? ""))
+        }
+         
+        switch response {
+        case .success:
+            return true
+        case .failure(_, let message):
+            print(message.localized())
+            let alert = UIAlertController(title: "Check Input", message: message.rawValue, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"Hunt Input Fields Empty or Invalid\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+            return false
+         }
         
     }
     
@@ -385,16 +398,35 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     //MARK: UITextField
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == addressEntry {
+            getLatLong(addressString: addressEntry.text!)
+        }
+        
+        if LocationPicker.text == "Coordinates" {
+            if !(latitudeEntry.text?.isEmpty ?? true) && !(longitudeEntry.text?.isEmpty ?? true) {
+                let response = Validation.shared.validate(values: (ValidationType.coordinate, latitudeEntry.text ?? ""), (ValidationType.coordinate, longitudeEntry.text ?? ""))
+                switch response {
+                case .success:
+                    // Add call to add annotation here. Use DOUBLE(latitudeEntry.text) and DOUBLE(longitudeEntry.text) for coordinates. When call is added, remove print statement
+                    print("Coordinates valid")
+                case .failure:
+                    let alert = UIAlertController(title: "Coordinates Invalid", message: "Either the latitude or longitude is in an invalid format.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                        NSLog("The \"Coordinates invalid\" alert occured.")
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+            }
+        }
+        
         updateSaveButtonStatus()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == addressEntry {
-            getLatLong(addressString: addressEntry.text!)
-        }
         updateSaveButtonStatus()
         self.view.endEditing(true)
-        
+                
         return true
     }
     
@@ -417,18 +449,33 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     }
 
     private func getLatLong(addressString: String) {
-        let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(addressString) { (placemarks, error) in
-            guard
-                let placemarks = placemarks,
-                let location = placemarks.first?.location
-            else {
-                // handle no location found
-                return
+        if !(addressEntry.text?.isEmpty ?? true) {
+            // Add call to add annotation here. Use locationLatLong variable to access address lat and long
+            let response = Validation.shared.validate(values: (ValidationType.address, addressEntry.text ?? ""))
+            switch response {
+            case .success:
+                let geoCoder = CLGeocoder()
+                geoCoder.geocodeAddressString(addressString) { (placemarks, error) in
+                    guard
+                        let placemarks = placemarks,
+                        let location = placemarks.first?.location
+                    else {
+                        // handle no location found
+                        return
+                    }
+                    print(location)
+                    self.locationLatLong = location
+                    // Add call to add annotation here. Use locationLatLong for coordinates
+                }
+            case .failure:
+                let alert = UIAlertController(title: "Address Invalid", message: "Address is in an invalid format.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("The \"Address invalid\" alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
-            print(location)
-            self.locationLatLong = location
         }
+        
     }
     
     @objc func longTap(sender: UIGestureRecognizer) {
