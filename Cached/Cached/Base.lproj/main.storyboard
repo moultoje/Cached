@@ -186,56 +186,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbg-s4-6nF">
-                                <rect key="frame" x="0.0" y="353.66666666666669" width="414" height="50"/>
-                                <color key="backgroundColor" name="CachedBackgroundColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gk-TF-EyR">
+                                <rect key="frame" x="0.0" y="378.66666666666669" width="414" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTW-U7-Z0W">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="50"/>
+                                        <color key="backgroundColor" name="CachedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="UXV-A0-UFB"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="fie-ul-hNz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Create Treasure Hunt">
+                                            <color key="titleColor" name="SystemTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="4jb-xT-M2t" kind="show" id="X76-v9-Q5y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbg-s4-6nF">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <color key="backgroundColor" name="CachedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="YR1-eo-YZu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Search Public Treasure Hunt">
+                                            <color key="titleColor" name="SystemTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="0Jz-4r-udw" kind="show" id="SgI-kO-O8K"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="YR1-eo-YZu"/>
+                                    <constraint firstItem="fTW-U7-Z0W" firstAttribute="width" secondItem="7Gk-TF-EyR" secondAttribute="width" id="0aR-Yb-XK7"/>
+                                    <constraint firstItem="Cbg-s4-6nF" firstAttribute="top" secondItem="7Gk-TF-EyR" secondAttribute="top" id="BdM-fu-fWc"/>
+                                    <constraint firstItem="Cbg-s4-6nF" firstAttribute="centerX" secondItem="7Gk-TF-EyR" secondAttribute="centerX" id="UOc-tq-ijG"/>
+                                    <constraint firstItem="fTW-U7-Z0W" firstAttribute="centerX" secondItem="7Gk-TF-EyR" secondAttribute="centerX" id="Xws-ik-JLM"/>
+                                    <constraint firstAttribute="height" constant="100" id="dH9-mc-fhZ"/>
+                                    <constraint firstItem="Cbg-s4-6nF" firstAttribute="width" secondItem="7Gk-TF-EyR" secondAttribute="width" id="hO2-vo-SM5"/>
+                                    <constraint firstItem="fTW-U7-Z0W" firstAttribute="top" secondItem="Cbg-s4-6nF" secondAttribute="bottom" id="ke4-b8-jKH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Search Public Treasure Hunt">
-                                    <color key="titleColor" name="SystemTextColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0Jz-4r-udw" kind="show" id="SgI-kO-O8K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzD-q2-xdR">
-                                <rect key="frame" x="0.0" y="403.66666666666669" width="414" height="50"/>
-                                <color key="backgroundColor" name="CachedBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Join Private Treasure Hunt">
-                                    <color key="titleColor" name="SystemTextColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="kEr-3F-8vb" kind="show" id="wjg-R7-tgT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTW-U7-Z0W">
-                                <rect key="frame" x="0.0" y="453.66666666666669" width="414" height="50"/>
-                                <color key="backgroundColor" name="CachedBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Create Treasure Hunt">
-                                    <color key="titleColor" name="SystemTextColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="4jb-xT-M2t" kind="show" id="X76-v9-Q5y"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="CachedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Cbg-s4-6nF" firstAttribute="centerX" secondItem="7wj-3q-UGD" secondAttribute="centerX" id="Iqn-jt-a97"/>
-                            <constraint firstItem="fTW-U7-Z0W" firstAttribute="height" secondItem="Cbg-s4-6nF" secondAttribute="height" id="M53-fq-lrB"/>
-                            <constraint firstItem="KzD-q2-xdR" firstAttribute="height" secondItem="Cbg-s4-6nF" secondAttribute="height" id="Sw9-Zw-tLj"/>
-                            <constraint firstItem="Cbg-s4-6nF" firstAttribute="width" secondItem="7wj-3q-UGD" secondAttribute="width" id="UeP-8H-OmN"/>
-                            <constraint firstItem="fTW-U7-Z0W" firstAttribute="centerX" secondItem="Cbg-s4-6nF" secondAttribute="centerX" id="V3r-yY-f09"/>
-                            <constraint firstItem="KzD-q2-xdR" firstAttribute="width" secondItem="Cbg-s4-6nF" secondAttribute="width" id="g78-LM-MA0"/>
-                            <constraint firstItem="KzD-q2-xdR" firstAttribute="centerY" secondItem="7wj-3q-UGD" secondAttribute="centerY" id="gjb-Pp-jYG"/>
-                            <constraint firstItem="KzD-q2-xdR" firstAttribute="centerX" secondItem="Cbg-s4-6nF" secondAttribute="centerX" id="gzH-Sb-3JH"/>
-                            <constraint firstItem="KzD-q2-xdR" firstAttribute="top" secondItem="Cbg-s4-6nF" secondAttribute="bottom" id="pF7-6h-2Fy"/>
-                            <constraint firstItem="fTW-U7-Z0W" firstAttribute="top" secondItem="KzD-q2-xdR" secondAttribute="bottom" id="ua4-25-f97"/>
-                            <constraint firstItem="fTW-U7-Z0W" firstAttribute="width" secondItem="Cbg-s4-6nF" secondAttribute="width" id="uqJ-A9-n3A"/>
+                            <constraint firstItem="7Gk-TF-EyR" firstAttribute="width" secondItem="7wj-3q-UGD" secondAttribute="width" id="0cP-Mq-nfJ"/>
+                            <constraint firstItem="7Gk-TF-EyR" firstAttribute="centerY" secondItem="7wj-3q-UGD" secondAttribute="centerY" id="CZs-mI-HeP"/>
+                            <constraint firstItem="7Gk-TF-EyR" firstAttribute="centerX" secondItem="7wj-3q-UGD" secondAttribute="centerX" id="TCu-3p-Cmu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7wj-3q-UGD"/>
                     </view>
@@ -519,71 +519,6 @@
             </objects>
             <point key="canvasLocation" x="2655.072463768116" y="805.58035714285711"/>
         </scene>
-        <!--Join Private Hunt-->
-        <scene sceneID="zKb-V4-XtB">
-            <objects>
-                <viewController title="Join Private Hunt" id="RJv-b9-8yG" customClass="PrivateHuntViewController" customModule="Cached" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="joF-lP-3s3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAS-1c-Llk">
-                                <rect key="frame" x="0.0" y="388" width="414" height="88"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hunt ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVD-Ba-CFE">
-                                        <rect key="frame" x="0.0" y="10" width="414" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" name="SystemTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter hunt ID..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhG-ud-EZa">
-                                        <rect key="frame" x="139.33333333333331" y="44" width="135.33333333333331" height="34"/>
-                                        <color key="backgroundColor" name="CachedSecondaryBackgroundColor"/>
-                                        <color key="textColor" name="SystemTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" name="CachedBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="hVD-Ba-CFE" firstAttribute="top" secondItem="XAS-1c-Llk" secondAttribute="top" constant="10" id="agY-Ao-ZhN"/>
-                                    <constraint firstItem="xhG-ud-EZa" firstAttribute="centerX" secondItem="hVD-Ba-CFE" secondAttribute="centerX" id="gZr-br-9Ok"/>
-                                    <constraint firstItem="xhG-ud-EZa" firstAttribute="top" secondItem="hVD-Ba-CFE" secondAttribute="bottom" constant="10" id="m5n-Sp-TsQ"/>
-                                    <constraint firstItem="hVD-Ba-CFE" firstAttribute="width" secondItem="XAS-1c-Llk" secondAttribute="width" id="srp-Ez-WHW"/>
-                                    <constraint firstAttribute="bottom" secondItem="xhG-ud-EZa" secondAttribute="bottom" constant="10" id="tPb-AK-VNx"/>
-                                    <constraint firstItem="hVD-Ba-CFE" firstAttribute="centerX" secondItem="XAS-1c-Llk" secondAttribute="centerX" id="zOg-x8-5f2"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" name="CachedBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="XAS-1c-Llk" firstAttribute="centerX" secondItem="Kft-sF-Zkg" secondAttribute="centerX" id="7bX-lP-BJ0"/>
-                            <constraint firstItem="XAS-1c-Llk" firstAttribute="width" secondItem="Kft-sF-Zkg" secondAttribute="width" id="B57-eJ-AgK"/>
-                            <constraint firstItem="XAS-1c-Llk" firstAttribute="centerY" secondItem="Kft-sF-Zkg" secondAttribute="centerY" id="jAi-cY-V4Y"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Kft-sF-Zkg"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Join Private Hunt" id="4dF-pq-2vA">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="G56-eA-tco">
-                            <connections>
-                                <action selector="cancel:" destination="RJv-b9-8yG" id="qTa-qW-vJA"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Join" id="tX6-zL-ZIy">
-                            <connections>
-                                <action selector="Done:" destination="RJv-b9-8yG" id="753-41-H1F"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="done_status" destination="tX6-zL-ZIy" id="liF-cs-Tha"/>
-                        <outlet property="private_id_text" destination="xhG-ud-EZa" id="WBv-40-kfN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgf-Fa-eKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2655.072463768116" y="1504.6875"/>
-        </scene>
         <!--Add Waypoint-->
         <scene sceneID="wr3-I8-sKK">
             <objects>
@@ -811,25 +746,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rl1-2e-6a9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1744.9275362318842" y="805.58035714285711"/>
-        </scene>
-        <!--Private Hunt Navigation Controller-->
-        <scene sceneID="KoW-bC-bQ3">
-            <objects>
-                <navigationController title="Private Hunt Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="kEr-3F-8vb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="RbF-4p-zjc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1oF-gF-Qzn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="RJv-b9-8yG" kind="relationship" relationship="rootViewController" id="85q-0g-RhT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w45-pN-QZp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1744.9275362318842" y="1504.6875"/>
         </scene>
         <!--Public Treasure Hunt Navigation Controller-->
         <scene sceneID="AlL-sp-Jzf">
