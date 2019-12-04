@@ -472,7 +472,6 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
 
     private func getLatLong(addressString: String) {
         if !(addressEntry.text?.isEmpty ?? true) {
-            // Add call to add annotation here. Use locationLatLong variable to access address lat and long
             let response = Validation.shared.validate(values: (ValidationType.address, addressEntry.text ?? ""))
             switch response {
             case .success:
@@ -553,8 +552,6 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         if curAnnotations.count > 0 {
             let newCircle = MKCircle(center: curAnnotations[0].coordinate, radius: CLLocationDistance(waypointRadius.text!)!)
             waypointMapView.addOverlay(newCircle)
-            //let newCircleRenderer = MKCircleRenderer(circle: newCircle)
-            //waypointMapView.addOverlay(newCircleRenderer)
         }
     }
 }
