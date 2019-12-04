@@ -36,7 +36,6 @@ class PublicHuntSearchViewController: UIViewController, UITableViewDataSource, U
             }
         }
     }
-
     
     fileprivate func publicQuery() -> Query {
         return Firestore.firestore().collection("hunts").whereField("isPrivate", isEqualTo: false).limit(to: 10)
@@ -63,11 +62,7 @@ class PublicHuntSearchViewController: UIViewController, UITableViewDataSource, U
             
            let results = snapshot.documents.map { (document) -> Hunt in
                 let hunt = Hunt(dictionary: document.data(), id: document.documentID)
-//                {
                 return hunt
-//                } else {
-//                    fatalError("Unable to initialize type \(Hunt.self) with dictionary \(document.data())")
- //               }
             }
             
             self.hunts = results
@@ -100,8 +95,6 @@ extension PublicHuntSearchViewController{
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "cellID")
         
         let item = self.hunts[indexPath.row]
-        
-        //print("\(item.listWaypoints.count)")
         
         cell.textLabel?.text = item.name
         cell.textLabel?.textColor = UIColor(named: "SystemTextColor")
@@ -148,7 +141,6 @@ extension PublicHuntSearchViewController{
         }
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let destVC = segue.destination as! MapViewController
         destVC.currentHunt = selectedHunt
@@ -169,9 +161,4 @@ extension PublicHuntSearchViewController{
         destVC.waypoints = waypointsArray
         print(waypointsArray)
     }
-    
 }
-
-
-
-
