@@ -81,6 +81,48 @@ class HuntCreationViewController: UIViewController, UITableViewDelegate, UITable
         emailTextField.delegate = self
         
         updateSaveButtonStatus()
+        
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(keyboardDidShow(_:)),
+          name: UIResponder.keyboardDidShowNotification,
+          object: nil)
+
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(keyboardDidHide(_:)),
+          name: UIResponder.keyboardDidHideNotification,
+          object: nil)
+    }
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    var keyboardShown = false
+    
+    func adjustInsetForKeyboardShow(_ show: Bool, notification: Notification) {
+      guard
+        let userInfo = notification.userInfo,
+        let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey]
+          as? NSValue
+        else {
+          return
+      }
+        
+      let adjustmentHeight = (keyboardFrame.cgRectValue.height + 20) * (show ? 1 : -1)
+        print(adjustmentHeight)
+      scrollView.contentInset.bottom += adjustmentHeight
+      scrollView.verticalScrollIndicatorInsets.bottom += adjustmentHeight
+    }
+      
+    @objc func keyboardDidShow(_ notification: Notification) {
+        if !keyboardShown {
+            adjustInsetForKeyboardShow(true, notification: notification)
+            keyboardShown = true
+        }
+    }
+    @objc func keyboardDidHide(_ notification: Notification) {
+        adjustInsetForKeyboardShow(false, notification: notification)
+        keyboardShown = false
     }
     
     func textFieldDidEndEditing(_ textFields: UITextField) {

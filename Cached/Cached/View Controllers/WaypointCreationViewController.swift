@@ -22,6 +22,8 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     @IBOutlet weak var waypointRadius: UITextField!
     @IBOutlet weak var waypointMapView: MKMapView!
     
+    @IBOutlet weak var scrollView: UIScrollView! 
+    
     let locationManager = CLLocationManager()
         
     @IBOutlet var textFields: [UITextField]!
@@ -44,6 +46,8 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
         
         waypointName.delegate = self
         waypointClue.delegate = self
@@ -89,8 +93,47 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         
         updateSaveButtonStatus()
         
-        
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(keyboardDidShow(_:)),
+          name: UIResponder.keyboardDidShowNotification,
+          object: nil)
+
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(keyboardDidHide(_:)),
+          name: UIResponder.keyboardDidHideNotification,
+          object: nil)
     }
+    
+    var keyboardShown = false
+    
+    func adjustInsetForKeyboardShow(_ show: Bool, notification: Notification) {
+      guard
+        let userInfo = notification.userInfo,
+        let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey]
+          as? NSValue
+        else {
+          return
+      }
+        
+      let adjustmentHeight = (keyboardFrame.cgRectValue.height + 20) * (show ? 1 : -1)
+        print(adjustmentHeight)
+      scrollView.contentInset.bottom += adjustmentHeight
+      scrollView.verticalScrollIndicatorInsets.bottom += adjustmentHeight
+    }
+      
+    @objc func keyboardDidShow(_ notification: Notification) {
+        if !keyboardShown {
+            adjustInsetForKeyboardShow(true, notification: notification)
+            keyboardShown = true
+        }
+    }
+    @objc func keyboardDidHide(_ notification: Notification) {
+        adjustInsetForKeyboardShow(false, notification: notification)
+        keyboardShown = false
+    }
+
     
     //MARK: Navigation
     
@@ -409,6 +452,8 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
         }
         
         updateSaveButtonStatus()
+        
+        textField.resignFirstResponder()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -492,16 +537,25 @@ class WaypointCreationViewController: UIViewController, UIPickerViewDataSource, 
     }
     
     private func addMapRadius() {
-        let curOverlays = waypointMapView.overlays
-        if curOverlays.count > 0 {
-            waypointMapView.removeOverlays(curOverlays)
+        if !(waypointRadius.text?.isEmpty ?? true) {
+            let response = Validation.shared.validate(values: (ValidationType.radius, waypointRadius.text ?? ""))
+            switch response {
+            case .success:
+                let curOverlays = waypointMapView.overlays
+                if curOverlays.count > 0 {
+                    waypointMapView.removeOverlays(curOverlays)
+                }
+                
+                let curAnnotations = waypointMapView.annotations
+                if curAnnotations.count > 0 {
+                    let newCircle = MKCircle(center: curAnnotations[0].coordinate, radius: CLLocationDistance(waypointRadius.text!)!)
+                    waypointMapView.addOverlay(newCircle)
+                    print("Add radius")
+                }
+            case .failure:
+                print("No radius to add.")
+            }
         }
         
-        let curAnnotations = waypointMapView.annotations
-        if curAnnotations.count > 0 {
-            let newCircle = MKCircle(center: curAnnotations[0].coordinate, radius: CLLocationDistance(waypointRadius.text!)!)
-            waypointMapView.addOverlay(newCircle)
-            print("Add radius")
-        }
     }
 }

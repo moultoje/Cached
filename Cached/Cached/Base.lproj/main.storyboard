@@ -508,6 +508,7 @@
                         <outlet property="emailTextField" destination="YDG-jJ-q8D" id="BgN-Ia-Zuv"/>
                         <outlet property="nameTextField" destination="fWT-hK-j59" id="Qhd-Pm-D1C"/>
                         <outlet property="saveStatus" destination="Vom-Ya-NSw" id="33J-2u-bqA"/>
+                        <outlet property="scrollView" destination="Clv-FS-MM2" id="Rjz-jR-47O"/>
                         <outlet property="tableHeight" destination="OhF-3A-wb0" id="4EK-ft-ktK"/>
                         <outlet property="waypointTable" destination="62B-BP-Hgi" id="HBG-0e-KTB"/>
                         <outletCollection property="textFields" destination="fWT-hK-j59" collectionClass="NSMutableArray" id="ksm-Dy-Bko"/>
@@ -696,6 +697,7 @@
                         <outlet property="LocationPicker" destination="6a6-uE-0tu" id="dYV-Q1-UfD"/>
                         <outlet property="saveButton" destination="k0o-MB-s9a" id="WqY-5g-4Rk"/>
                         <outlet property="savebutton" destination="k0o-MB-s9a" id="CJ4-ng-6dE"/>
+                        <outlet property="scrollView" destination="IW3-We-X8p" id="yA0-4x-p8Q"/>
                         <outlet property="waypointClue" destination="wSO-yt-rql" id="njO-wP-AuV"/>
                         <outlet property="waypointMapView" destination="XBd-iV-gD4" id="KhR-2z-h8f"/>
                         <outlet property="waypointName" destination="oRy-Za-pwl" id="sX8-tG-fIW"/>
