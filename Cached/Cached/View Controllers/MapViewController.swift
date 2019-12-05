@@ -28,7 +28,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         mapView.userTrackingMode = .follow
-        
         checkLocationServices()
     }
     
@@ -46,24 +45,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         for currentWaypoint in self.waypoints {
             print("\(currentWaypoint.name), \(currentWaypoint.clue), \(currentWaypoint.latitude), \(currentWaypoint.longitude), \(currentWaypoint.radius), \(currentWaypoint.id)")
         }
-        
     }
     
     func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
-            checkLocationAuthorization()
+            locationManager.requestWhenInUseAuthorization()
         } else {
             print("Please enable location services in iPhone Settings.")
-        }
-    }
-    
-    func checkLocationAuthorization() {
-        switch CLLocationManager.authorizationStatus() {
-            case .authorizedWhenInUse: break
-            case .denied: locationManager.requestWhenInUseAuthorization()
-            case .notDetermined: break
-            case .restricted: break
-            case .authorizedAlways: break
         }
     }
     
