@@ -45,6 +45,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         for currentWaypoint in self.waypoints {
             print("\(currentWaypoint.name), \(currentWaypoint.clue), \(currentWaypoint.latitude), \(currentWaypoint.longitude), \(currentWaypoint.radius), \(currentWaypoint.id)")
         }
+        
+        //clueText.userInterac
     }
     
     func checkLocationServices() {

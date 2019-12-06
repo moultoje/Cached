@@ -87,9 +87,12 @@
                                     <action selector="changeMapType:" destination="9pv-A4-QxB" eventType="touchUpInside" id="IKN-47-TaY"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" text="Clue text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YFV-RH-mdf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" keyboardDismissMode="interactive" editable="NO" text="Clue text..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YFV-RH-mdf">
                                 <rect key="frame" x="20" y="54" width="294" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RQs-U1-Noz"/>
                                 </constraints>
